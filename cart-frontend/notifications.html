@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CART notifications">
+    <title>Notifications | CART</title>
+</head>
+
+<body>
+<!-- =========================
+     HEADER
+========================== -->
+<header class="site-header">
+
+    <div class="header-top">
+        <div class="container header-top-inner">
+
+            <a href="index.html" class="logo">
+                <span>CART</span>
+            </a>
+
+            <div class="header-search">
+                <form id="searchForm">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search products..."
+                        autocomplete="off"
+                    >
+                    <button type="submit" aria-label="Search">
+                        Search
+                    </button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+
+                <a href="wishlist.html" class="header-action">
+                    <span>♡</span>
+                    <small>Wishlist</small>
+                </a>
+
+                <a href="account.html" class="header-action">
+                    <span>♙</span>
+                    <small>Account</small>
+                </a>
+
+                <a href="cart.html" class="header-action cart-action">
+                    <span>🛒</span>
+                    <small>Cart</small>
+                    <b id="cartCount">0</b>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container nav-inner">
+
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+            <a href="shop.html?category=Home">
+                Home & Living
+            </a>
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+        </div>
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     PAGE
+========================== -->
+<main class="notifications-page">
+
+    <div class="container">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="eyebrow">ACCOUNT</span>
+
+                <h1>Notifications</h1>
+
+                <p>
+                    Stay updated with your orders,
+                    account activity and CART offers.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                id="markAllReadBtn"
+                class="secondary-button"
+            >
+                Mark all as read
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             NOTIFICATION FILTERS
+        ========================== -->
+        <div class="notification-filters">
+
+            <button
+                type="button"
+                class="notification-filter active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                type="button"
+                class="notification-filter"
+                data-filter="orders"
+            >
+                Orders
+            </button>
+
+            <button
+                type="button"
+                class="notification-filter"
+                data-filter="account"
+            >
+                Account
+            </button>
+
+            <button
+                type="button"
+                class="notification-filter"
+                data-filter="offers"
+            >
+                Offers
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             NOTIFICATION LIST
+        ========================== -->
+        <section class="notifications-card">
+
+            <div
+                id="notificationsList"
+                class="notifications-list"
+            >
+                <!-- Notifications inserted by JavaScript -->
+            </div>
+
+
+            <!-- EMPTY STATE -->
+            <div
+                id="notificationsEmpty"
+                class="notifications-empty"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    🔔
+                </div>
+
+                <h2>No notifications</h2>
+
+                <p>
+                    You're all caught up.
+                    New updates will appear here.
+                </p>
+
+                <a href="shop.html" class="primary-button">
+                    Continue Shopping
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NOTIFICATION SETTINGS
+        ========================== -->
+        <section class="notification-settings">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        PREFERENCES
+                    </span>
+
+                    <h2>Notification settings</h2>
+
+                    <p>
+                        Choose the updates you want to receive.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <label class="setting-row">
+
+                    <div>
+                        <strong>Order updates</strong>
+
+                        <span>
+                            Get updates about your orders,
+                            shipping and delivery.
+                        </span>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="orderNotifications"
+                        checked
+                    >
+
+                </label>
+
+
+                <label class="setting-row">
+
+                    <div>
+                        <strong>Account activity</strong>
+
+                        <span>
+                            Receive important account and
+                            security notifications.
+                        </span>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="accountNotifications"
+                        checked
+                    >
+
+                </label>
+
+
+                <label class="setting-row">
+
+                    <div>
+                        <strong>Offers & promotions</strong>
+
+                        <span>
+                            Receive updates about discounts,
+                            deals and special offers.
+                        </span>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="offerNotifications"
+                        checked
+                    >
+
+                </label>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <h3>CART</h3>
+
+                <p>
+                    Your trusted online marketplace for
+                    quality products at great prices.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Shop</h4>
+
+                <a href="shop.html">All Products</a>
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+                <a href="shop.html?category=Home">
+                    Home & Living
+                </a>
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Help</h4>
+
+                <a href="faq.html">FAQ</a>
+                <a href="shipping.html">Shipping</a>
+                <a href="return.html">Returns</a>
+                <a href="support.html">Support</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Account</h4>
+
+                <a href="account.html">My Account</a>
+                <a href="orders.html">My Orders</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="notifications.html">
+                    Notifications
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 CART. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/notifications.js"></script>
+
+</body>
+</html>

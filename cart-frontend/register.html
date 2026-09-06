@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Account | NaijaCart</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <style>
+        /* =====================================================
+           REGISTER PAGE
+        ===================================================== */
+
+        .register-page {
+            min-height: calc(100vh - 160px);
+            background: #f5f8f6;
+            padding: 60px 20px 80px;
+        }
+
+        .register-container {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        /* =====================================================
+           LEFT PANEL
+        ===================================================== */
+
+        .register-welcome {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #008751 0%,
+                    #006b40 55%,
+                    #004f32 100%
+                );
+            color: #ffffff;
+            padding: 55px 45px;
+            min-height: 650px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 60px rgba(0, 80, 50, 0.18);
+        }
+
+        .register-welcome::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            top: -100px;
+            right: -90px;
+        }
+
+        .register-welcome::after {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            bottom: -70px;
+            left: -70px;
+        }
+
+        .register-welcome-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .register-brand {
+            margin-bottom: 20px;
+        }
+
+        .register-brand-name {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b8f5d2;
+            margin-bottom: 18px;
+        }
+
+        .register-welcome h1 {
+            margin: 0;
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.08;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+        }
+
+        .register-welcome > .register-welcome-content > p {
+            margin: 20px 0 0;
+            max-width: 460px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           BENEFITS
+        ===================================================== */
+
+        .register-benefits {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            gap: 15px;
+            margin-top: 45px;
+        }
+
+        .register-benefit {
+            display: grid;
+            grid-template-columns: 52px 1fr;
+            gap: 15px;
+            align-items: center;
+            padding: 17px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .register-benefit-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, 0.13);
+            font-size: 23px;
+        }
+
+        .register-benefit h3 {
+            margin: 0 0 5px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .register-benefit p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .register-welcome-footer {
+            position: relative;
+            z-index: 2;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.62);
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           RIGHT CARD
+        ===================================================== */
+
+        .register-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 45px;
+            box-shadow: 0 25px 60px rgba(17, 17, 17, 0.08);
+            border: 1px solid #e6ece8;
+        }
+
+        .register-card-header {
+            margin-bottom: 28px;
+        }
+
+        .register-card-header h2 {
+            margin: 0 0 8px;
+            color: #111111;
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: -0.7px;
+        }
+
+        .register-card-header p {
+            margin: 0;
+            color: #69736e;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .register-message {
+            display: none;
+            padding: 13px 15px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .register-message.error {
+            display: block;
+            background: #fff1f1;
+            border: 1px solid #ffd0d0;
+            color: #b42318;
+        }
+
+        .register-message.success {
+            display: block;
+            background: #eefaf3;
+            border: 1px solid #c9eed8;
+            color: #087443;
+        }
+
+        .register-message.info {
+            display: block;
+            background: #f0f7f4;
+            border: 1px solid #d7ebe2;
+            color: #006b40;
+        }
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .register-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .register-form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .register-form-group label {
+            color: #202622;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .register-form-group .optional {
+            color: #929b96;
+            font-weight: 500;
+        }
+
+        .register-form-group input {
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            border: 1px solid #dce4df;
+            border-radius: 13px;
+            outline: none;
+            background: #fbfcfb;
+            color: #111111;
+            font-family: inherit;
+            font-size: 14px;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .register-form-group input::placeholder {
+            color: #a1aaa5;
+        }
+
+        .register-form-group input:focus {
+            background: #ffffff;
+            border-color: #008751;
+            box-shadow: 0 0 0 4px rgba(0, 135, 81, 0.10);
+        }
+
+        /* =====================================================
+           PASSWORD
+        ===================================================== */
+
+        .register-password-wrapper {
+            position: relative;
+        }
+
+        .register-password-wrapper input {
+            padding-right: 68px;
+        }
+
+        .register-password-toggle {
+            position: absolute;
+            right: 7px;
+            top: 7px;
+            width: 48px;
+            height: 38px;
+            border: 0;
+            border-radius: 9px;
+            background: #eef6f1;
+            color: #006b40;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .register-password-toggle:hover {
+            background: #dcefe5;
+        }
+
+        /* =====================================================
+           TERMS
+        ===================================================== */
+
+        .register-terms {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 2px;
+            color: #68716c;
+            font-size: 12px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .register-terms input {
+            width: 17px;
+            height: 17px;
+            flex: 0 0 17px;
+            margin: 2px 0 0;
+            accent-color: #008751;
+            cursor: pointer;
+        }
+
+        .register-terms a {
+            color: #008751;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .register-terms a:hover {
+            text-decoration: underline;
+        }
+
+        /* =====================================================
+           SUBMIT
+        ===================================================== */
+
+        .register-submit {
+            width: 100%;
+            min-height: 54px;
+            margin-top: 5px;
+            border: 0;
+            border-radius: 13px;
+            background: #008751;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 900;
+            cursor: pointer;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+            box-shadow: 0 12px 25px rgba(0, 135, 81, 0.18);
+        }
+
+        .register-submit:hover {
+            background: #006b40;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 107, 64, 0.22);
+        }
+
+        .register-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* =====================================================
+           LOGIN FOOTER
+        ===================================================== */
+
+        .register-login-footer {
+            margin-top: 25px;
+            padding-top: 22px;
+            border-top: 1px solid #edf0ee;
+            text-align: center;
+        }
+
+        .register-login-footer p {
+            display: inline;
+            margin: 0;
+            color: #7b847f;
+            font-size: 13px;
+        }
+
+        .register-login-footer a {
+            margin-left: 5px;
+            color: #008751;
+            font-size: 13px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .register-login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* =====================================================
+           HEADER BRAND
+        ===================================================== */
+
+        .site-header .logo {
+            text-decoration: none;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+        }
+
+        .site-header .logo-naija {
+            color: #8ff0b9 !important;
+        }
+
+        .site-header .logo-cart {
+            color: #fff8e7 !important;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .site-footer .logo-naija {
+            color: #8ff0b9 !important;
+        }
+
+        .site-footer .logo-cart {
+            color: #fff8e7 !important;
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .register-container {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+
+            .register-welcome {
+                min-height: auto;
+                padding: 42px 35px;
+            }
+
+            .register-benefits {
+                margin-top: 35px;
+            }
+
+            .register-welcome-footer {
+                margin-top: 30px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .register-page {
+                padding: 30px 14px 55px;
+            }
+
+            .register-container {
+                gap: 18px;
+            }
+
+            .register-welcome {
+                padding: 32px 24px;
+                border-radius: 22px;
+            }
+
+            .register-welcome h1 {
+                font-size: 34px;
+            }
+
+            .register-card {
+                padding: 28px 20px;
+                border-radius: 22px;
+            }
+
+            .register-card-header h2 {
+                font-size: 25px;
+            }
+
+            .register-benefit {
+                grid-template-columns: 45px 1fr;
+                padding: 13px;
+            }
+
+            .register-benefit-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-container">
+
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="NaijaCart Home"
+            >
+                <span class="logo-naija">Naija</span><span class="logo-cart">Cart</span>
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="login.html"
+                    class="header-login"
+                >
+                    Login
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="cart-link"
+                >
+                    Cart
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         REGISTER PAGE
+    ====================================================== -->
+
+    <main class="register-page">
+
+        <div class="register-container">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <section class="register-welcome">
+
+                <div class="register-welcome-content">
+
+                    <div class="register-brand">
+
+                        <div class="register-brand-name">
+                            NaijaCart
+                        </div>
+
+                        <h1>
+                            Join us<br>
+                            & start shopping. ✨
+                        </h1>
+
+                        <p>
+                            Create your account and discover
+                            products you love, save your
+                            favourites and keep track of
+                            every order.
+                        </p>
+
+                    </div>
+
+
+                    <div class="register-benefits">
+
+
+                        <div class="register-benefit">
+
+                            <span class="register-benefit-icon">
+                                🛍️
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Easy Shopping
+                                </h3>
+
+                                <p>
+                                    Discover products you love
+                                    in one place.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="register-benefit">
+
+                            <span class="register-benefit-icon">
+                                ❤️
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Save Your Favourites
+                                </h3>
+
+                                <p>
+                                    Keep products you love
+                                    close at hand.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="register-benefit">
+
+                            <span class="register-benefit-icon">
+                                📦
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Track Your Orders
+                                </h3>
+
+                                <p>
+                                    Follow your purchases from
+                                    checkout to delivery.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="register-welcome-footer">
+                    Your shopping journey starts here.
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RIGHT SIDE
+            ================================================== -->
+
+            <section class="register-card">
+
+
+                <div class="register-card-header">
+
+                    <h2>
+                        Create an account
+                    </h2>
+
+                    <p>
+                        Fill in your details to get started.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     MESSAGE
+                ================================================== -->
+
+                <div
+                    id="registerMessage"
+                    class="register-message"
+                >
+                </div>
+
+
+                <!-- =================================================
+                     REGISTER FORM
+                ================================================== -->
+
+                <form
+                    id="registerForm"
+                    class="register-form"
+                >
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="register-form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="register-form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="register-form-group">
+
+                        <label for="phone">
+
+                            Phone Number
+
+                            <span class="optional">
+                                (Optional)
+                            </span>
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="08012345678"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="register-form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="register-password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Minimum 8 characters"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="passwordToggle"
+                                class="register-password-toggle password-toggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="register-form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="register-password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="confirmPasswordToggle"
+                                class="register-password-toggle password-toggle"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <label class="register-terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span>
+
+                            I agree to the
+
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+
+                            and
+
+                            <a href="#">
+                                Privacy Policy
+                            </a>
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="register-submit"
+                    >
+                        Create Account
+                    </button>
+
+
+                </form>
+
+
+                <!-- =================================================
+                     LOGIN LINK
+                ================================================== -->
+
+                <div class="register-login-footer">
+
+                    <p>
+                        Already have an account?
+                    </p>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 NaijaCart. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/register.js"></script>
+
+
+</body>
+
+</html>

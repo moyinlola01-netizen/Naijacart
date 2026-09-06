@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CART — Admin Panel</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-letter">C</div>
+        <span class="logo-text">CART ADMIN PANEL</span>
+    </div>
+
+    <div class="store-status">
+        <span class="status-dot"></span>
+        <span>Store Online</span>
+
+        <div class="status-text">
+            Everything is running
+        </div>
+    </div>
+
+    <div class="menu-title">MAIN</div>
+
+    <a class="nav-link active" href="#dashboard" data-section="dashboard">
+        <span class="nav-icon">⌂</span>
+        <span class="nav-text">Dashboard</span>
+    </a>
+
+    <a class="nav-link" href="#orders" data-section="orders">
+        <span class="nav-icon">▣</span>
+        <span class="nav-text">
+            Orders <span id="orderCount">4</span>
+        </span>
+    </a>
+
+    <a class="nav-link" href="#products" data-section="products">
+        <span class="nav-icon">◇</span>
+        <span class="nav-text">Products</span>
+    </a>
+
+    <a class="nav-link" href="#customers" data-section="customers">
+        <span class="nav-icon">♙</span>
+        <span class="nav-text">Customers</span>
+    </a>
+
+    <div class="menu-title">MANAGEMENT</div>
+
+    <a class="nav-link" href="#inventory" data-section="inventory">
+        <span class="nav-icon">▤</span>
+        <span class="nav-text">Inventory</span>
+    </a>
+
+    <a class="nav-link" href="#analytics" data-section="analytics">
+        <span class="nav-icon">◒</span>
+        <span class="nav-text">Analytics</span>
+    </a>
+
+    <a class="nav-link" href="#messages" data-section="messages">
+        <span class="nav-icon">✉</span>
+        <span class="nav-text">Support</span>
+    </a>
+
+    <div class="menu-title">STORE</div>
+
+    <a class="nav-link" href="index.html">
+        <span class="nav-icon">↗</span>
+        <span class="nav-text">View Store</span>
+    </a>
+
+    <div class="sidebar-bottom">
+
+        <a href="account.html" class="admin-profile">
+            <div class="admin-avatar">A</div>
+
+            <div class="admin-info">
+                <div class="admin-name">Administrator</div>
+                <div class="admin-role">Store Manager</div>
+            </div>
+        </a>
+
+        <button class="logout-btn" id="logoutBtn">
+            <span>↪</span>
+            <span class="logout-text">Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <h1 id="pageTitle">Dashboard</h1>
+            <p id="pageSubtitle">Store overview and performance</p>
+        </div>
+
+        <div class="topbar-actions">
+
+            <a href="index.html" class="store-btn">
+                View Store ↗
+            </a>
+
+            <a href="account.html" class="account-btn">
+                A
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <div class="content">
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="page-section active">
+
+            <div class="welcome">
+
+                <div>
+                    <div class="date">
+                        THURSDAY, SEPTEMBER 3, 2026
+                    </div>
+
+                    <h2>Welcome back, Admin 👋</h2>
+
+                    <p>
+                        Here's what's happening with your store today.
+                    </p>
+                </div>
+
+                <button class="primary-btn" data-action="add-product">
+                    + Add Product
+                </button>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card" data-go="analytics">
+                    <div class="stat-top">
+                        <div class="stat-icon">₦</div>
+                        <span class="growth">↑ 12.8%</span>
+                    </div>
+
+                    <div class="stat-label">
+                        Total Revenue
+                    </div>
+
+                    <div class="stat-value">
+                        ₦172,000
+                    </div>
+
+                    <div class="small-text">
+                        Compared with last month
+                    </div>
+                </div>
+
+
+                <div class="stat-card" data-go="orders">
+                    <div class="stat-top">
+                        <div class="stat-icon">▣</div>
+                        <span class="growth">↑ 8.4%</span>
+                    </div>
+
+                    <div class="stat-label">
+                        Total Orders
+                    </div>
+
+                    <div class="stat-value">
+                        4
+                    </div>
+
+                    <div class="small-text">
+                        Orders placed
+                    </div>
+                </div>
+
+
+                <div class="stat-card" data-go="customers">
+                    <div class="stat-top">
+                        <div class="stat-icon">♙</div>
+                        <span class="growth">↑ 6.2%</span>
+                    </div>
+
+                    <div class="stat-label">
+                        Customers
+                    </div>
+
+                    <div class="stat-value">
+                        4
+                    </div>
+
+                    <div class="small-text">
+                        Registered customers
+                    </div>
+                </div>
+
+
+                <div class="stat-card" data-go="products">
+                    <div class="stat-top">
+                        <div class="stat-icon">◇</div>
+                        <span class="growth">Live</span>
+                    </div>
+
+                    <div class="stat-label">
+                        Products
+                    </div>
+
+                    <div class="stat-value">
+                        20
+                    </div>
+
+                    <div class="small-text">
+                        Products in catalogue
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- SALES -->
+
+            <div class="card performance">
+
+                <div class="card-header">
+
+                    <div>
+                        <div class="shortcuts-title">
+                            STORE PERFORMANCE
+                        </div>
+
+                        <h3>Sales Overview</h3>
+                    </div>
+
+                    <select id="chartSelect" class="chart-select">
+                        <option value="7">Last 7 days</option>
+                        <option value="30">Last 30 days</option>
+                        <option value="90">Last 90 days</option>
+                    </select>
+
+                </div>
+
+
+                <div class="chart-box">
+
+                    <div class="chart-lines">
+
+                        <div class="chart-line">
+                            <span class="chart-label">₦100k</span>
+                        </div>
+
+                        <div class="chart-line">
+                            <span class="chart-label">₦75k</span>
+                        </div>
+
+                        <div class="chart-line">
+                            <span class="chart-label">₦50k</span>
+                        </div>
+
+                        <div class="chart-line">
+                            <span class="chart-label">₦25k</span>
+                        </div>
+
+                        <div class="chart-line">
+                            <span class="chart-label">₦0</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bars">
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="0"></div>
+                            <span class="month">Jan</span>
+                        </div>
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="1"></div>
+                            <span class="month">Feb</span>
+                        </div>
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="2"></div>
+                            <span class="month">Mar</span>
+                        </div>
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="3"></div>
+                            <span class="month">Apr</span>
+                        </div>
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="4"></div>
+                            <span class="month">May</span>
+                        </div>
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="5"></div>
+                            <span class="month">Jun</span>
+                        </div>
+
+                        <div class="bar-wrapper">
+                            <div class="bar" data-bar="6"></div>
+                            <span class="month">Jul</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHORTCUTS -->
+
+            <div class="shortcuts-title">
+                SHORTCUTS
+            </div>
+
+            <h3 class="quick-title">
+                Quick Actions
+            </h3>
+
+
+            <div class="shortcuts">
+
+                <div class="shortcut" data-action="add-product">
+                    <div class="shortcut-icon">+</div>
+                    <h4>Add Product</h4>
+                    <p>Create a new listing</p>
+                </div>
+
+
+                <div class="shortcut" data-go="orders">
+                    <div class="shortcut-icon">→▣</div>
+                    <h4>Manage Orders</h4>
+                    <p>Review customer orders</p>
+                </div>
+
+
+                <div class="shortcut" data-go="inventory">
+                    <div class="shortcut-icon">→!</div>
+                    <h4>Check Inventory</h4>
+                    <p>Review stock levels</p>
+                </div>
+
+
+                <div class="shortcut" data-go="customers">
+                    <div class="shortcut-icon">→♙</div>
+                    <h4>Customers</h4>
+                    <p>View your customers</p>
+                </div>
+
+            </div>
+
+
+            <!-- RECENT ORDERS -->
+
+            <div class="card table-card recent-orders-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <div class="shortcuts-title">
+                            ORDERS
+                        </div>
+
+                        <h3>Recent Orders</h3>
+                    </div>
+
+                    <a href="#orders" class="view-link" data-go="orders">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>Customer 1</td>
+                            <td>03 Sep 2026</td>
+                            <td>₦45,000</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#ORD-002</td>
+                            <td>Customer 2</td>
+                            <td>03 Sep 2026</td>
+                            <td>₦30,000</td>
+                            <td><span class="status processing">Processing</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#ORD-003</td>
+                            <td>Customer 3</td>
+                            <td>02 Sep 2026</td>
+                            <td>₦52,000</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#ORD-004</td>
+                            <td>Customer 4</td>
+                            <td>01 Sep 2026</td>
+                            <td>₦45,000</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- TOP PRODUCTS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <div class="shortcuts-title">
+                            PERFORMANCE
+                        </div>
+
+                        <h3>Top Products</h3>
+                    </div>
+
+                    <a href="#products" class="view-link" data-go="products">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <div class="products-grid">
+
+                    <div class="product-card" data-product="Wireless Earbuds">
+                        <img
+                            class="product-image"
+                            src="/images/products/earbuds.jpg"
+                            alt="Wireless Earbuds"
+                        >
+
+                        <div class="product-info">
+                            <h4>Wireless Earbuds</h4>
+                            <div class="reviews">32 reviews</div>
+                            <div class="price">₦22,000</div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-product="Luxury Perfume">
+                        <img
+                            class="product-image"
+                            src="/images/products/perfume.jpg"
+                            alt="Luxury Perfume"
+                        >
+
+                        <div class="product-info">
+                            <h4>Luxury Perfume</h4>
+                            <div class="reviews">29 reviews</div>
+                            <div class="price">₦30,000</div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-product="Wireless Headphones">
+                        <img
+                            class="product-image"
+                            src="/images/products/headphones.jpg"
+                            alt="Wireless Headphones"
+                        >
+
+                        <div class="product-info">
+                            <h4>Wireless Headphones</h4>
+                            <div class="reviews">27 reviews</div>
+                            <div class="price">₦35,000</div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-product="Classic Sneakers">
+                        <img
+                            class="product-image"
+                            src="/images/products/sneakers.jpg"
+                            alt="Classic Sneakers"
+                        >
+
+                        <div class="product-info">
+                            <h4>Classic Sneakers</h4>
+                            <div class="reviews">25 reviews</div>
+                            <div class="price">₦30,000</div>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-product="Premium Dinner Set">
+                        <img
+                            class="product-image"
+                            src="/images/products/dinner-set.jpg"
+                            alt="Premium Dinner Set"
+                        >
+
+                        <div class="product-info">
+                            <h4>Premium Dinner Set</h4>
+                            <div class="reviews">24 reviews</div>
+                            <div class="price">₦25,000</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDERS -->
+
+        <section id="orders" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Orders</h2>
+                    <p>Manage all customer orders.</p>
+                </div>
+
+                <button class="secondary-btn" data-go="dashboard">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="card table-card">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>Customer 1</td>
+                            <td>03 Sep 2026</td>
+                            <td>₦45,000</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>
+                                <button class="secondary-btn view-order" data-order="ORD-001">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#ORD-002</td>
+                            <td>Customer 2</td>
+                            <td>03 Sep 2026</td>
+                            <td>₦30,000</td>
+                            <td><span class="status processing">Processing</span></td>
+                            <td>
+                                <button class="secondary-btn view-order" data-order="ORD-002">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#ORD-003</td>
+                            <td>Customer 3</td>
+                            <td>02 Sep 2026</td>
+                            <td>₦52,000</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>
+                                <button class="secondary-btn view-order" data-order="ORD-003">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#ORD-004</td>
+                            <td>Customer 4</td>
+                            <td>01 Sep 2026</td>
+                            <td>₦45,000</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="secondary-btn view-order" data-order="ORD-004">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section id="products" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Products</h2>
+                    <p>Manage your product catalogue.</p>
+                </div>
+
+                <div class="section-actions">
+
+                    <button class="secondary-btn" data-go="dashboard">
+                        ← Dashboard
+                    </button>
+
+                    <button class="primary-btn" data-action="add-product">
+                        + Add Product
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="products-grid">
+
+                <div class="product-card" data-product="Wireless Earbuds">
+                    <img class="product-image" src="/images/products/earbuds.jpg" alt="Wireless Earbuds">
+
+                    <div class="product-info">
+                        <h4>Wireless Earbuds</h4>
+                        <div class="reviews">32 reviews</div>
+                        <div class="price">₦22,000</div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-product="Luxury Perfume">
+                    <img class="product-image" src="/images/products/perfume.jpg" alt="Luxury Perfume">
+
+                    <div class="product-info">
+                        <h4>Luxury Perfume</h4>
+                        <div class="reviews">29 reviews</div>
+                        <div class="price">₦30,000</div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-product="Wireless Headphones">
+                    <img class="product-image" src="/images/products/headphones.jpg" alt="Wireless Headphones">
+
+                    <div class="product-info">
+                        <h4>Wireless Headphones</h4>
+                        <div class="reviews">27 reviews</div>
+                        <div class="price">₦35,000</div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-product="Classic Sneakers">
+                    <img class="product-image" src="/images/products/sneakers.jpg" alt="Classic Sneakers">
+
+                    <div class="product-info">
+                        <h4>Classic Sneakers</h4>
+                        <div class="reviews">25 reviews</div>
+                        <div class="price">₦30,000</div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-product="Premium Dinner Set">
+                    <img class="product-image" src="/images/products/dinner-set.jpg" alt="Premium Dinner Set">
+
+                    <div class="product-info">
+                        <h4>Premium Dinner Set</h4>
+                        <div class="reviews">24 reviews</div>
+                        <div class="price">₦25,000</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOMERS -->
+
+        <section id="customers" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Customers</h2>
+                    <p>View registered customers.</p>
+                </div>
+
+                <button class="secondary-btn" data-go="dashboard">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="card table-card">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Email</th>
+                            <th>Orders</th>
+                            <th>Total Spent</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Customer 1</td>
+                            <td>customer1@example.com</td>
+                            <td>2</td>
+                            <td>₦75,000</td>
+                            <td><span class="status completed">Active</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Customer 2</td>
+                            <td>customer2@example.com</td>
+                            <td>1</td>
+                            <td>₦30,000</td>
+                            <td><span class="status completed">Active</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Customer 3</td>
+                            <td>customer3@example.com</td>
+                            <td>1</td>
+                            <td>₦52,000</td>
+                            <td><span class="status completed">Active</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Customer 4</td>
+                            <td>customer4@example.com</td>
+                            <td>1</td>
+                            <td>₦45,000</td>
+                            <td><span class="status completed">Active</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTORY -->
+
+        <section id="inventory" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Inventory</h2>
+                    <p>Monitor stock levels across your store.</p>
+                </div>
+
+                <button class="secondary-btn" data-go="dashboard">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="inventory-grid">
+
+                <div class="inventory-card">
+                    <h3>Total Products</h3>
+                    <div class="inventory-number">20</div>
+                    <div class="inventory-text">
+                        Products in catalogue
+                    </div>
+                </div>
+
+                <div class="inventory-card">
+                    <h3>In Stock</h3>
+                    <div class="inventory-number">17</div>
+                    <div class="inventory-text">
+                        Products available
+                    </div>
+                </div>
+
+                <div class="inventory-card">
+                    <h3>Low Stock</h3>
+                    <div class="inventory-number">3</div>
+                    <div class="inventory-text">
+                        Products need attention
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="card inventory-table-card">
+
+                <div class="card-header">
+                    <h3>Stock Levels</h3>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Wireless Earbuds</td>
+                            <td>Electronics</td>
+                            <td>25</td>
+                            <td><span class="status completed">In Stock</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Luxury Perfume</td>
+                            <td>Beauty</td>
+                            <td>12</td>
+                            <td><span class="status completed">In Stock</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Classic Sneakers</td>
+                            <td>Fashion</td>
+                            <td>4</td>
+                            <td><span class="status pending">Low Stock</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS -->
+
+        <section id="analytics" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Analytics</h2>
+                    <p>Track your store's performance.</p>
+                </div>
+
+                <button class="secondary-btn" data-go="dashboard">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="analytics-grid">
+
+                <div class="analytics-card">
+                    <h3>Total Revenue</h3>
+
+                    <div class="big-number">
+                        ₦172,000
+                    </div>
+
+                    <div class="small-note">
+                        ↑ 12.8% compared with last month
+                    </div>
+                </div>
+
+
+                <div class="analytics-card">
+                    <h3>Total Orders</h3>
+
+                    <div class="big-number">
+                        4
+                    </div>
+
+                    <div class="small-note">
+                        ↑ 8.4% compared with last month
+                    </div>
+                </div>
+
+
+                <div class="analytics-card">
+                    <h3>Customers</h3>
+
+                    <div class="big-number">
+                        4
+                    </div>
+
+                    <div class="small-note">
+                        ↑ 6.2% compared with last month
+                    </div>
+                </div>
+
+
+                <div class="analytics-card">
+                    <h3>Products</h3>
+
+                    <div class="big-number">
+                        20
+                    </div>
+
+                    <div class="small-note">
+                        Currently listed in your store
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUPPORT -->
+
+        <section id="messages" class="page-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Support</h2>
+                    <p>Customer messages and support requests.</p>
+                </div>
+
+                <button class="secondary-btn" data-go="dashboard">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="support-list">
+
+                <div class="support-item" data-customer="Customer 1">
+                    <h4>Customer 1</h4>
+                    <p>
+                        Customer support request — click to view.
+                    </p>
+                </div>
+
+
+                <div class="support-item" data-customer="Customer 2">
+                    <h4>Customer 2</h4>
+                    <p>
+                        Product enquiry — click to view.
+                    </p>
+                </div>
+
+
+                <div class="support-item" data-customer="Customer 3">
+                    <h4>Customer 3</h4>
+                    <p>
+                        Order enquiry — click to view.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

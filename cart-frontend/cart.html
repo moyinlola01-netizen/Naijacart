@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart | CART.</title>
+
+<link rel="stylesheet" href="css/cart.css?v=4">
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     PROMO BAR
+====================================================== -->
+
+<div class="promo-bar">
+    <div class="promo-inner">
+        <span>FREE DELIVERY ON SELECTED ORDERS</span>
+        <strong>SHOP SMART. SHOP CART.</strong>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header">
+
+    <div class="header-main">
+
+        <a href="index.html" class="brand">
+            CART<span>.</span>
+        </a>
+
+        <form class="header-search" id="cartSearchForm">
+
+            <input
+                type="search"
+                id="cartSearchInput"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <button type="submit" aria-label="Search">
+                🔍
+            </button>
+
+        </form>
+
+
+        <div class="header-actions">
+
+            <a href="login.html" class="header-action">
+                <span class="action-icon">♙</span>
+                <span>Account</span>
+            </a>
+
+            <a href="wishlist.html" class="header-action">
+                <span class="action-icon">♡</span>
+                <span>Wishlist</span>
+            </a>
+
+            <a href="cart.html" class="header-action cart-action active">
+                <span class="action-icon">🛒</span>
+                <span>
+                    Cart
+                    <b id="cartCount">0</b>
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="main-nav">
+
+        <div class="nav-inner">
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="shop.html?category=Home">
+                Home
+            </a>
+
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="shipping.html">
+                Shipping & Returns
+            </a>
+
+            <a href="support.html">
+                Support
+            </a>
+
+            <a href="faq.html">
+                FAQ
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     BREADCRUMB
+====================================================== -->
+
+<div class="breadcrumb-wrap">
+
+    <div class="container breadcrumb">
+
+        <a href="index.html">Home</a>
+
+        <span>/</span>
+
+        <strong>Shopping Cart</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CART PAGE
+====================================================== -->
+
+<main class="cart-page">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             CART HERO
+        ================================================== -->
+
+        <section class="cart-hero">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    YOUR SHOPPING BAG
+                </span>
+
+                <h1>
+                    Shopping Cart
+                </h1>
+
+                <p>
+                    Review your selected products, update quantities
+                    and continue securely to checkout.
+                </p>
+
+            </div>
+
+
+            <div class="cart-hero-count">
+
+                <span class="count-icon">
+                    🛒
+                </span>
+
+                <div>
+
+                    <strong id="heroCartCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Items in your cart
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CART CONTENT
+        ================================================== -->
+
+        <section class="cart-layout">
+
+
+            <!-- =============================================
+                 LEFT — ITEMS
+            ============================================== -->
+
+            <div class="cart-items-section">
+
+                <div class="cart-section-heading">
+
+                    <div>
+
+                        <span>
+                            CART ITEMS
+                        </span>
+
+                        <h2>
+                            Your selected products
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="shop.html"
+                        class="continue-link"
+                    >
+                        ← Continue Shopping
+                    </a>
+
+                </div>
+
+
+                <!-- CART ITEMS ARE RENDERED HERE -->
+
+                <div
+                    id="cart-items"
+                    class="cart-items"
+                >
+
+                    <div class="cart-loading">
+
+                        <div class="loading-spinner"></div>
+
+                        <p>
+                            Loading your cart...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMPTY CART -->
+
+                <div
+                    id="emptyCart"
+                    class="empty-cart"
+                    hidden
+                >
+
+                    <div class="empty-cart-icon">
+                        🛒
+                    </div>
+
+                    <span class="section-eyebrow">
+                        YOUR BAG IS WAITING
+                    </span>
+
+                    <h2>
+                        Your cart is empty
+                    </h2>
+
+                    <p>
+                        You haven't added anything to your cart yet.
+                        Explore our products and find something you love.
+                    </p>
+
+                    <a
+                        href="shop.html"
+                        class="primary-button"
+                    >
+                        Start Shopping
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- CART BENEFITS -->
+
+                <div class="cart-benefits">
+
+                    <div class="cart-benefit">
+
+                        <div class="benefit-icon">
+                            🚚
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Reliable Delivery
+                            </strong>
+
+                            <span>
+                                Delivery across Nigeria.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cart-benefit">
+
+                        <div class="benefit-icon">
+                            🔐
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Secure Shopping
+                            </strong>
+
+                            <span>
+                                Your details stay protected.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cart-benefit">
+
+                        <div class="benefit-icon">
+                            ↩
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Easy Returns
+                            </strong>
+
+                            <span>
+                                Shop confidently with CART.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 RIGHT — ORDER SUMMARY
+            ============================================== -->
+
+            <aside class="cart-summary">
+
+                <div class="summary-header">
+
+                    <span>
+                        ORDER SUMMARY
+                    </span>
+
+                    <h2>
+                        Your total
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-items">
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="cartSubtotal">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="cartDelivery">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row discount-row">
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="cartDiscount">
+                            − ₦0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-total">
+
+                    <div>
+
+                        <span>
+                            Total
+                        </span>
+
+                        <small>
+                            VAT included where applicable
+                        </small>
+
+                    </div>
+
+                    <strong id="cartTotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <!-- COUPON -->
+
+                <div class="coupon-box">
+
+                    <label for="couponCode">
+                        Have a promo code?
+                    </label>
+
+                    <div class="coupon-form">
+
+                        <input
+                            type="text"
+                            id="couponCode"
+                            placeholder="Enter code"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="button"
+                            id="applyCoupon"
+                        >
+                            Apply
+                        </button>
+
+                    </div>
+
+                    <p
+                        id="couponMessage"
+                        class="coupon-message"
+                    ></p>
+
+                </div>
+
+
+                <!-- CHECKOUT -->
+
+                <a
+                    href="checkout.html"
+                    class="checkout-button"
+                    id="checkoutButton"
+                >
+
+                    <span>
+                        Proceed to Checkout
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="shop.html"
+                    class="summary-shopping"
+                >
+                    Continue Shopping
+                </a>
+
+
+                <!-- SECURE CHECKOUT -->
+
+                <div class="secure-checkout">
+
+                    <span class="secure-icon">
+                        🔒
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Secure Checkout
+                        </strong>
+
+                        <span>
+                            Your information is protected.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- =================================================
+             SHOPPING PROMISE
+        ================================================== -->
+
+        <section class="shopping-promise">
+
+            <div class="promise-heading">
+
+                <span class="section-eyebrow">
+                    WHY SHOP WITH CART.
+                </span>
+
+                <h2>
+                    A better way to shop online.
+                </h2>
+
+            </div>
+
+
+            <div class="promise-grid">
+
+                <div class="promise-card">
+
+                    <span class="promise-number">
+                        01
+                    </span>
+
+                    <div class="promise-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Quality Products
+                    </h3>
+
+                    <p>
+                        Discover products selected to make everyday
+                        shopping easier and more enjoyable.
+                    </p>
+
+                </div>
+
+
+                <div class="promise-card">
+
+                    <span class="promise-number">
+                        02
+                    </span>
+
+                    <div class="promise-icon">
+                        🚚
+                    </div>
+
+                    <h3>
+                        Smooth Delivery
+                    </h3>
+
+                    <p>
+                        Get your order delivered to your selected
+                        address across Nigeria.
+                    </p>
+
+                </div>
+
+
+                <div class="promise-card">
+
+                    <span class="promise-number">
+                        03
+                    </span>
+
+                    <div class="promise-icon">
+                        ↩
+                    </div>
+
+                    <h3>
+                        Easy Returns
+                    </h3>
+
+                    <p>
+                        Eligible products can be returned according
+                        to our return policy.
+                    </p>
+
+                </div>
+
+
+                <div class="promise-card">
+
+                    <span class="promise-number">
+                        04
+                    </span>
+
+                    <div class="promise-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Customer First
+                    </h3>
+
+                    <p>
+                        Need help? Our support and help center are
+                        always available when you need them.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DISCOVERY
+        ================================================== -->
+
+        <section class="cart-discovery">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    STILL LOOKING?
+                </span>
+
+                <h2>
+                    Find something else you love.
+                </h2>
+
+                <p>
+                    Explore our latest products across fashion,
+                    electronics, beauty and home.
+                </p>
+
+            </div>
+
+            <a
+                href="shop.html"
+                class="dark-button"
+            >
+                Explore Shop
+                <span>→</span>
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     NEWSLETTER
+====================================================== -->
+
+<section class="newsletter">
+
+    <div class="container newsletter-inner">
+
+        <div>
+
+            <span class="section-eyebrow">
+                STAY IN THE LOOP
+            </span>
+
+            <h2>
+                Get updates from CART.
+            </h2>
+
+            <p>
+                New products, offers and shopping updates,
+                straight to your inbox.
+            </p>
+
+        </div>
+
+
+        <form
+            class="newsletter-form"
+            id="cartNewsletter"
+        >
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+                <span>→</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="footer-logo"
+            >
+                CART<span>.</span>
+            </a>
+
+            <p>
+                Your trusted Nigerian online marketplace.
+                Discover great products and shop with confidence.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="shop.html">
+                All Products
+            </a>
+
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+            <a href="shop.html?category=Home">
+                Home
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Account
+            </h3>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="register.html">
+                Register
+            </a>
+
+            <a href="orders.html">
+                My Orders
+            </a>
+
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+
+            <a href="cart.html">
+                My Cart
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Help
+            </h3>
+
+            <a href="support.html">
+                Contact Us
+            </a>
+
+            <a href="shipping.html">
+                Delivery Information
+            </a>
+
+            <a href="return-refund.html">
+                Returns
+            </a>
+
+            <a href="faq.html">
+                FAQ
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <span>
+            © 2026 CART. All rights reserved.
+        </span>
+
+        <span>
+            SHOP SMART. SHOP CART.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+    id="cartToast"
+    class="cart-toast"
+></div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/cart.js?v=4"></script>
+</body>
+</html>

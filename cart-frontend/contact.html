@@ -1,0 +1,459 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Cart customer support."
+    >
+
+    <title>Contact Us | Cart</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                CART
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="shop.html">Shop</a>
+
+                <a href="about.html">About</a>
+
+                <a href="cart.html">Cart</a>
+
+                <a href="wishlist.html">Wishlist</a>
+
+                <a href="orders.html">Orders</a>
+
+                <a href="account.html">Account</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="contact-page">
+
+        <section class="contact-hero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    GET IN TOUCH
+                </span>
+
+                <h1>
+                    Contact Us
+                </h1>
+
+                <p>
+                    Have a question about your account,
+                    order, delivery, or shopping experience?
+                    We're here to help.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact-section">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+
+                    <!-- =================================================
+                         CONTACT INFORMATION
+                    ================================================== -->
+
+                    <div class="contact-info">
+
+                        <span class="eyebrow">
+                            CUSTOMER SUPPORT
+                        </span>
+
+                        <h2>
+                            We're here to help.
+                        </h2>
+
+                        <p>
+                            Before contacting us, you may find
+                            the answer you need in our frequently
+                            asked questions.
+                        </p>
+
+                        <a
+                            href="faq.html"
+                            class="secondary-btn"
+                        >
+                            Visit FAQ
+                        </a>
+
+
+                        <div class="contact-info-list">
+
+                            <div class="contact-info-item">
+
+                                <div class="contact-info-icon">
+                                    ✉
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Email
+                                    </h3>
+
+                                    <p>
+                                        support@cart.com
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-info-item">
+
+                                <div class="contact-info-icon">
+                                    ⏰
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Support Hours
+                                    </h3>
+
+                                    <p>
+                                        Monday – Saturday
+                                    </p>
+
+                                    <p>
+                                        9:00 AM – 6:00 PM
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-info-item">
+
+                                <div class="contact-info-icon">
+                                    📦
+                                </div>
+
+                                <div>
+
+                                    <h3>
+                                        Order Help
+                                    </h3>
+
+                                    <p>
+                                        Have your order number
+                                        available when contacting
+                                        support.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         CONTACT FORM
+                    ================================================== -->
+
+                    <div class="contact-form-card">
+
+                        <form
+                            id="contactForm"
+                            novalidate
+                        >
+
+                            <div
+                                id="contactMessage"
+                                class="form-message"
+                                aria-live="polite"
+                            ></div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    name="name"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactEmail">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactSubject">
+                                    Subject
+                                </label>
+
+                                <select
+                                    id="contactSubject"
+                                    name="subject"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select a subject
+                                    </option>
+
+                                    <option value="order">
+                                        Order Help
+                                    </option>
+
+                                    <option value="delivery">
+                                        Delivery
+                                    </option>
+
+                                    <option value="payment">
+                                        Payment
+                                    </option>
+
+                                    <option value="return">
+                                        Returns & Refunds
+                                    </option>
+
+                                    <option value="account">
+                                        Account
+                                    </option>
+
+                                    <option value="product">
+                                        Product Question
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactOrder">
+                                    Order Number
+                                    <span>
+                                        (Optional)
+                                    </span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactOrder"
+                                    name="order_number"
+                                    placeholder="e.g. CRT-20260901-ABC123"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactText">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="contactText"
+                                    name="message"
+                                    rows="6"
+                                    placeholder="Tell us how we can help..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="primary-btn"
+                                id="contactSubmit"
+                            >
+                                Send Message
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="logo"
+                    >
+                        CART
+                    </a>
+
+                    <p>
+                        Your trusted online
+                        shopping destination.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="shop.html">
+                        Shop
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="faq.html">
+                        FAQ
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="support.html">
+                        Support
+                    </a>
+
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                    <a href="returns.html">
+                        Returns
+                    </a>
+
+                    <a href="shipping.html">
+                        Shipping
+                    </a>
+
+                    <a href="payment.html">
+                        Payment
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 Cart.
+                    All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+    <script src="js/contact.js"></script>
+
+</body>
+
+</html>

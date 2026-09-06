@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | CART.</title>
+
+<link rel="stylesheet" href="css/login.css?v=6">
+
+
+</head>
+
+<body>
+
+<main class="login-page">
+
+    <!-- =========================
+         LEFT SHOWCASE
+    ========================== -->
+    <section class="login-showcase">
+
+        <div class="showcase-top">
+            <a href="index.html" class="brand">CART<span>.</span></a>
+
+            <a href="shop.html" class="continue-shopping">
+                Continue Shopping <span>→</span>
+            </a>
+        </div>
+
+        <div class="showcase-content">
+
+            <span class="eyebrow">WELCOME BACK</span>
+
+            <h1>
+                Everything you love,
+                <span>all in one place.</span>
+            </h1>
+
+            <p>
+                Sign in to continue shopping, manage your orders,
+                save your favourites and enjoy a smoother CART.
+                experience.
+            </p>
+
+            <div class="showcase-grid">
+
+                <div class="showcase-card">
+                    <span class="card-icon">✦</span>
+                    <strong>Shop smarter</strong>
+                    <small>
+                        Discover products selected for your everyday needs.
+                    </small>
+                </div>
+
+                <div class="showcase-card">
+                    <span class="card-icon">✓</span>
+                    <strong>Track orders</strong>
+                    <small>
+                        Keep up with your purchases from checkout to delivery.
+                    </small>
+                </div>
+
+                <div class="showcase-card">
+                    <span class="card-icon">♡</span>
+                    <strong>Save favourites</strong>
+                    <small>
+                        Keep products you love ready for your next visit.
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="showcase-footer">
+            <span>© 2026 CART.</span>
+            <span>SHOP SMART. SHOP CART.</span>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RIGHT LOGIN SECTION
+    ========================== -->
+    <section class="login-section">
+
+        <div class="login-card">
+
+            <div class="login-heading">
+
+                <span class="login-label">
+                    CART. ACCOUNT ACCESS
+                </span>
+
+                <h2>Login to your account</h2>
+
+                <p>
+                    Welcome back. Enter your details below to continue.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm" class="login-form">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a
+                            href="forgot-password.html"
+                            class="forgot-link"
+                        >
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >
+                            ◉
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+                    <span>Login</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+
+            <!-- DIVIDER -->
+            <div class="login-divider">
+                <span>OR</span>
+            </div>
+
+
+            <!-- REGISTER -->
+            <div class="register-box">
+
+                <div>
+                    <span class="register-small">
+                        NEW TO CART?
+                    </span>
+
+                    <strong>
+                        Don't have an account?
+                    </strong>
+                </div>
+
+                <a href="register.html" class="register-link">
+                    Create an account <span>→</span>
+                </a>
+
+            </div>
+
+
+            <!-- BENEFITS -->
+            <div class="login-benefits">
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">🔒</span>
+
+                    <div>
+                        <strong>Secure</strong>
+                        <small>Your account stays protected.</small>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">⚡</span>
+
+                    <div>
+                        <strong>Fast</strong>
+                        <small>Quick and easy account access.</small>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <span class="benefit-icon">♡</span>
+
+                    <div>
+                        <strong>Easy</strong>
+                        <small>Keep your shopping in one place.</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/auth.js?v=6"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        if (passwordInput && togglePassword) {
+
+            togglePassword.addEventListener("click", function () {
+
+                const isPassword =
+                    passwordInput.type === "password";
+
+                passwordInput.type =
+                    isPassword ? "text" : "password";
+
+                togglePassword.textContent =
+                    isPassword ? "◉" : "◉";
+
+                togglePassword.setAttribute(
+                    "aria-label",
+                    isPassword
+                        ? "Hide password"
+                        : "Show password"
+                );
+
+            });
+
+        }
+
+    });
+</script>
+
+</body>
+</html>

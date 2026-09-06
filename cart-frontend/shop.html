@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Shop quality electronics, fashion, beauty and home products at CART."
+    >
+
+    <title>Shop | CART</title>
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/shop.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         TOP PROMO BAR
+    ====================================================== -->
+
+    <div class="promo-bar">
+        FREE SHIPPING ON ORDERS OVER ₦50,000
+        <span>•</span>
+        SHOP SMART. SHOP CART.
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-main">
+
+            <a
+                href="index.html"
+                class="brand"
+            >
+                <span class="brand-name">CART</span>
+                <span class="brand-tagline">SHOP SMART</span>
+            </a>
+
+
+            <!-- SEARCH -->
+
+            <form
+                class="shop-search"
+                id="shopSearchForm"
+            >
+
+                <input
+                    type="search"
+                    id="shopSearchInput"
+                    placeholder="Search for products, brands and more..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >
+                    🔍
+                </button>
+
+            </form>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <a
+                    href="profile.html"
+                    class="header-action"
+                >
+                    <span>👤</span>
+                    <small>Account</small>
+                </a>
+
+
+                <a
+                    href="wishlist.html"
+                    class="header-action wishlist-header"
+                >
+                    <span>♡</span>
+                    <small>Wishlist</small>
+                    <b
+                        id="wishlistCount"
+                        class="header-count"
+                    >
+                        0
+                    </b>
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="header-action cart-header"
+                >
+                    <span>🛒</span>
+                    <small>Cart</small>
+                    <b
+                        id="cartCount"
+                        class="header-count"
+                    >
+                        0
+                    </b>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="shop.html"
+                class="active"
+            >
+                Shop
+            </a>
+
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="shop.html?category=Home">
+                Home
+            </a>
+
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CATEGORY STRIP
+    ====================================================== -->
+
+    <section class="category-strip">
+
+        <a
+            href="shop.html"
+            class="category-strip-item active"
+        >
+            <span class="category-icon">🛍️</span>
+            <span>All</span>
+        </a>
+
+
+        <a
+            href="shop.html?category=Electronics"
+            class="category-strip-item"
+        >
+            <span class="category-icon">📱</span>
+            <span>Electronics</span>
+        </a>
+
+
+        <a
+            href="shop.html?category=Fashion"
+            class="category-strip-item"
+        >
+            <span class="category-icon">👗</span>
+            <span>Fashion</span>
+        </a>
+
+
+        <a
+            href="shop.html?category=Home"
+            class="category-strip-item"
+        >
+            <span class="category-icon">🏠</span>
+            <span>Home</span>
+        </a>
+
+
+        <a
+            href="shop.html?category=Beauty"
+            class="category-strip-item"
+        >
+            <span class="category-icon">💄</span>
+            <span>Beauty</span>
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SHOP HERO
+    ====================================================== -->
+
+    <section class="shop-hero">
+
+        <div class="shop-hero-content">
+
+            <span class="hero-small-label">
+                CART MARKETPLACE
+            </span>
+
+            <h1>
+                Discover products
+                <br>
+                you'll love.
+            </h1>
+
+            <p>
+                Shop electronics, fashion, beauty and
+                home essentials at great prices.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#products"
+                    class="hero-btn primary"
+                >
+                    Shop Now
+                </a>
+
+                <a
+                    href="#deals"
+                    class="hero-btn secondary"
+                >
+                    Today's Deals
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="shop-hero-highlights">
+
+            <div class="hero-highlight">
+                <strong>20+</strong>
+                <span>Products</span>
+            </div>
+
+            <div class="hero-highlight">
+                <strong>4</strong>
+                <span>Categories</span>
+            </div>
+
+            <div class="hero-highlight">
+                <strong>24/7</strong>
+                <span>Shopping</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BENEFITS
+    ====================================================== -->
+
+    <section class="shop-benefits">
+
+        <div class="benefit-card">
+
+            <span class="benefit-icon">
+                🚚
+            </span>
+
+            <div>
+                <strong>
+                    Fast Delivery
+                </strong>
+
+                <p>
+                    Reliable delivery across Nigeria
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <span class="benefit-icon">
+                🔒
+            </span>
+
+            <div>
+                <strong>
+                    Secure Shopping
+                </strong>
+
+                <p>
+                    Your information stays protected
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <span class="benefit-icon">
+                ↩️
+            </span>
+
+            <div>
+                <strong>
+                    Easy Shopping
+                </strong>
+
+                <p>
+                    Simple and convenient checkout
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <span class="benefit-icon">
+                💳
+            </span>
+
+            <div>
+                <strong>
+                    Secure Payments
+                </strong>
+
+                <p>
+                    Safe and trusted payment options
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TODAY'S DEALS
+    ====================================================== -->
+
+    <section
+        class="deals-section"
+        id="deals"
+    >
+
+        <div class="section-heading-row">
+
+            <div>
+
+                <span class="section-label">
+                    DON'T MISS OUT
+                </span>
+
+                <h2>
+                    🔥 Today's Deals
+                </h2>
+
+                <p>
+                    Grab great products before the deals end.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#products"
+                class="view-all-link"
+            >
+                View All →
+            </a>
+
+        </div>
+
+
+        <div
+            class="deal-grid"
+            id="dealProducts"
+        >
+
+            <!-- Deal products inserted by shop.js -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CATEGORY DISCOVERY
+    ====================================================== -->
+
+    <section class="category-discovery">
+
+        <div class="section-heading-row">
+
+            <div>
+
+                <span class="section-label">
+                    SHOP BY CATEGORY
+                </span>
+
+                <h2>
+                    Find what you need
+                </h2>
+
+                <p>
+                    Explore our most popular categories.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="category-discovery-grid">
+
+
+            <a
+                href="shop.html?category=Electronics"
+                class="category-discovery-card electronics"
+            >
+
+                <div class="category-discovery-content">
+
+                    <span>
+                        📱
+                    </span>
+
+                    <h3>
+                        Electronics
+                    </h3>
+
+                    <p>
+                        Smart devices & accessories
+                    </p>
+
+                    <strong>
+                        Shop Now →
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="shop.html?category=Fashion"
+                class="category-discovery-card fashion"
+            >
+
+                <div class="category-discovery-content">
+
+                    <span>
+                        👗
+                    </span>
+
+                    <h3>
+                        Fashion
+                    </h3>
+
+                    <p>
+                        Clothes, shoes & accessories
+                    </p>
+
+                    <strong>
+                        Shop Now →
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="shop.html?category=Home"
+                class="category-discovery-card home"
+            >
+
+                <div class="category-discovery-content">
+
+                    <span>
+                        🏠
+                    </span>
+
+                    <h3>
+                        Home
+                    </h3>
+
+                    <p>
+                        Make your space beautiful
+                    </p>
+
+                    <strong>
+                        Shop Now →
+                    </strong>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="shop.html?category=Beauty"
+                class="category-discovery-card beauty"
+            >
+
+                <div class="category-discovery-content">
+
+                    <span>
+                        💄
+                    </span>
+
+                    <h3>
+                        Beauty
+                    </h3>
+
+                    <p>
+                        Beauty & personal care
+                    </p>
+
+                    <strong>
+                        Shop Now →
+                    </strong>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCTS SECTION
+    ====================================================== -->
+
+    <main
+        class="shop-products-section"
+        id="products"
+    >
+
+        <div class="section-heading-row products-heading">
+
+            <div>
+
+                <span class="section-label">
+                    OUR COLLECTION
+                </span>
+
+                <h2>
+                    All Products
+                </h2>
+
+                <p id="resultsDescription">
+                    Discover products selected for you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="shop-layout">
+
+
+            <!-- =================================================
+                 FILTER SIDEBAR
+            ================================================== -->
+
+            <aside
+                class="shop-sidebar"
+                id="shopSidebar"
+            >
+
+                <div class="filter-header">
+
+                    <h3>
+                        Filters
+                    </h3>
+
+                    <button
+                        type="button"
+                        id="clearFilters"
+                    >
+                        Clear all
+                    </button>
+
+                </div>
+
+
+                <!-- CATEGORY FILTER -->
+
+                <div class="filter-group">
+
+                    <h4>
+                        Categories
+                    </h4>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="category"
+                            value="all"
+                            checked
+                        >
+
+                        <span>
+                            All Products
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="category"
+                            value="Electronics"
+                        >
+
+                        <span>
+                            Electronics
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="category"
+                            value="Fashion"
+                        >
+
+                        <span>
+                            Fashion
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="category"
+                            value="Home"
+                        >
+
+                        <span>
+                            Home
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="category"
+                            value="Beauty"
+                        >
+
+                        <span>
+                            Beauty
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- PRICE FILTER -->
+
+                <div class="filter-group">
+
+                    <h4>
+                        Price
+                    </h4>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="price"
+                            value="all"
+                            checked
+                        >
+
+                        <span>
+                            All Prices
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="price"
+                            value="under15"
+                        >
+
+                        <span>
+                            Under ₦15,000
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="price"
+                            value="15to25"
+                        >
+
+                        <span>
+                            ₦15,000 - ₦25,000
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="price"
+                            value="25to40"
+                        >
+
+                        <span>
+                            ₦25,000 - ₦40,000
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="price"
+                            value="over40"
+                        >
+
+                        <span>
+                            ₦40,000+
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- RATING FILTER -->
+
+                <div class="filter-group">
+
+                    <h4>
+                        Customer Rating
+                    </h4>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="all"
+                            checked
+                        >
+
+                        <span>
+                            All Ratings
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="4"
+                        >
+
+                        <span>
+                            ⭐⭐⭐⭐ & up
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="3"
+                        >
+
+                        <span>
+                            ⭐⭐⭐ & up
+                        </span>
+
+                    </label>
+
+
+                    <label class="filter-option">
+
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="2"
+                        >
+
+                        <span>
+                            ⭐⭐ & up
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="apply-filters-btn"
+                    id="applyFilters"
+                >
+                    Apply Filters
+                </button>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 PRODUCTS CONTENT
+            ================================================== -->
+
+            <section class="shop-products-content">
+
+
+                <!-- TOOLBAR -->
+
+                <div class="products-toolbar">
+
+                    <div class="results-count">
+
+                        <strong id="productCount">
+                            20
+                        </strong>
+
+                        <span>
+                            products available
+                        </span>
+
+                    </div>
+
+
+                    <div class="toolbar-actions">
+
+                        <button
+                            type="button"
+                            class="mobile-filter-btn"
+                            id="mobileFilterBtn"
+                        >
+                            🎛️ Filters
+                        </button>
+
+
+                        <label class="sort-control">
+
+                            <span>
+                                Sort:
+                            </span>
+
+                            <select
+                                id="sortProducts"
+                            >
+
+                                <option value="featured">
+                                    Featured
+                                </option>
+
+                                <option value="newest">
+                                    Newest
+                                </option>
+
+                                <option value="price-low">
+                                    Price: Low to High
+                                </option>
+
+                                <option value="price-high">
+                                    Price: High to Low
+                                </option>
+
+                                <option value="rating">
+                                    Top Rated
+                                </option>
+
+                                <option value="discount">
+                                    Biggest Discount
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT GRID -->
+
+                <div
+                    class="shop-product-grid"
+                    id="shopProducts"
+                >
+
+                    <!-- Products inserted by shop.js -->
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="shop-empty-state"
+                    id="emptyProducts"
+                    hidden
+                >
+
+                    <div>
+                        🛍️
+                    </div>
+
+                    <h3>
+                        No products found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="resetShop"
+                    >
+                        View All Products
+                    </button>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div
+                    class="shop-pagination"
+                    id="shopPagination"
+                >
+
+                    <!-- Pagination generated by shop.js -->
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+
+    <section class="newsletter-section">
+
+        <div class="newsletter-content">
+
+            <span class="newsletter-label">
+                STAY IN THE LOOP
+            </span>
+
+            <h2>
+                Get the best deals first.
+            </h2>
+
+            <p>
+                Subscribe for new arrivals, special offers
+                and shopping updates.
+            </p>
+
+
+            <form
+                class="newsletter-form"
+                id="newsletterForm"
+            >
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <button type="submit">
+                    Subscribe
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="brand"
+                >
+                    <span class="brand-name">
+                        CART
+                    </span>
+
+                    <span class="brand-tagline">
+                        SHOP SMART
+                    </span>
+                </a>
+
+                <p>
+                    Your everyday marketplace for quality
+                    products at prices you'll love.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Shop
+                </h4>
+
+                <a href="shop.html">
+                    All Products
+                </a>
+
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+
+                <a href="shop.html?category=Home">
+                    Home
+                </a>
+
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Account
+                </h4>
+
+                <a href="profile.html">
+                    My Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <a href="orders.html">
+                    My Orders
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Help
+                </h4>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Delivery Information
+                </a>
+
+                <a href="#">
+                    Returns
+                </a>
+
+                <a href="#">
+                    FAQs
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 CART. All rights reserved.
+            </p>
+
+            <p>
+                Shop smart. Shop CART.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="shop-toast"
+        id="shopToast"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/shop.js"></script>
+
+</body>
+
+</html>

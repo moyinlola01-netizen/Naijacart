@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Product | CART</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PROMO BAR
+    ====================================================== -->
+
+    <div class="promo-bar">
+        <div class="promo-inner">
+            <span>🚚 Free delivery on selected orders</span>
+            <span>🔒 Secure shopping</span>
+            <span>💳 Secure payments</span>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-main">
+
+            <a href="index.html" class="brand">
+                <strong>CART</strong>
+                <span>SHOP SMART</span>
+            </a>
+
+
+            <!-- SEARCH -->
+
+            <form
+                class="header-search"
+                id="productSearchForm"
+            >
+
+                <input
+                    type="search"
+                    id="productSearchInput"
+                    placeholder="Search products, categories and more..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >
+                    🔍
+                </button>
+
+            </form>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <a
+                    href="profile.html"
+                    class="header-action"
+                >
+
+                    <span class="header-action-icon">
+                        👤
+                    </span>
+
+                    <span>
+                        <small>Hello,</small>
+                        <strong>Account</strong>
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+
+                    <span class="header-action-icon">
+                        ♡
+                    </span>
+
+                    <span class="header-count" id="wishlistCount">
+                        0
+                    </span>
+
+                    <span>
+                        <small>Your</small>
+                        <strong>Wishlist</strong>
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+
+                    <span class="header-action-icon">
+                        🛒
+                    </span>
+
+                    <span class="header-count" id="cartCount">
+                        0
+                    </span>
+
+                    <span>
+                        <small>Your</small>
+                        <strong>Cart</strong>
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <nav class="main-nav">
+
+            <div class="nav-inner">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    href="shop.html"
+                    class="active"
+                >
+                    Shop
+                </a>
+
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+
+                <a href="shop.html?category=Home">
+                    Home &amp; Living
+                </a>
+
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="product-page">
+
+
+        <!-- =================================================
+             BREADCRUMB
+        ================================================== -->
+
+        <div class="product-breadcrumb">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <span>›</span>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <span>›</span>
+
+            <span id="breadcrumbCategory">
+                Product
+            </span>
+
+            <span>›</span>
+
+            <span id="breadcrumbProduct">
+                Details
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             PRODUCT MAIN
+        ================================================== -->
+
+        <section
+            class="product-main"
+            id="productDetails"
+        >
+
+
+            <!-- =============================================
+                 PRODUCT GALLERY
+            ============================================== -->
+
+            <div class="product-gallery">
+
+                <div class="product-main-image">
+
+                    <img
+                        id="productImage"
+                        src=""
+                        alt="Product"
+                    >
+
+
+                    <span
+                        class="product-discount-badge"
+                        id="productDiscount"
+                    >
+                        -0%
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="product-gallery-wishlist"
+                        id="productWishlist"
+                        aria-label="Add to wishlist"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 PRODUCT INFORMATION
+            ============================================== -->
+
+            <div class="product-information">
+
+
+                <!-- CATEGORY -->
+
+                <span
+                    class="product-category"
+                    id="productCategory"
+                >
+                    Category
+                </span>
+
+
+                <!-- NAME -->
+
+                <h1 id="productName">
+                    Product Name
+                </h1>
+
+
+                <!-- RATING -->
+
+                <div class="product-rating-row">
+
+                    <span
+                        class="product-stars"
+                        id="productStars"
+                    >
+                        ★★★★★
+                    </span>
+
+                    <strong id="productRating">
+                        0.0
+                    </strong>
+
+                    <span>·</span>
+
+                    <a href="#reviews">
+                        <span id="productReviewCount">
+                            0 reviews
+                        </span>
+                    </a>
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="product-price-box">
+
+                    <span
+                        class="product-detail-price"
+                        id="productPrice"
+                    >
+                        ₦0
+                    </span>
+
+                    <span
+                        class="product-detail-old-price"
+                        id="productOldPrice"
+                    >
+                        ₦0
+                    </span>
+
+                    <span
+                        class="product-save"
+                        id="productSave"
+                    >
+                        Save ₦0
+                    </span>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <p
+                    class="product-description"
+                    id="productDescription"
+                >
+                    Product description.
+                </p>
+
+
+                <!-- STOCK -->
+
+                <div class="product-stock-box">
+
+                    <span class="stock-label">
+                        Availability:
+                    </span>
+
+                    <strong id="productStock">
+                        Available
+                    </strong>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div
+                    class="product-options"
+                    id="productOptions"
+                >
+                    <!-- JavaScript adds options here -->
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="product-quantity-section">
+
+                    <span>
+                        Quantity
+                    </span>
+
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            id="decreaseQuantity"
+                            aria-label="Decrease quantity"
+                        >
+                            −
+                        </button>
+
+                        <input
+                            type="number"
+                            id="productQuantity"
+                            value="1"
+                            min="1"
+                            max="99"
+                            aria-label="Product quantity"
+                        >
+
+                        <button
+                            type="button"
+                            id="increaseQuantity"
+                            aria-label="Increase quantity"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="product-actions">
+
+                    <button
+                        type="button"
+                        class="product-add-cart"
+                        id="addToCartBtn"
+                    >
+                        🛒 Add to Cart
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="product-buy-now"
+                        id="buyNowBtn"
+                    >
+                        Buy Now
+                    </button>
+
+                </div>
+
+
+                <!-- BENEFITS -->
+
+                <div class="product-benefits">
+
+
+                    <div class="product-benefit">
+
+                        <span>🚚</span>
+
+                        <div>
+
+                            <strong>
+                                Fast Delivery
+                            </strong>
+
+                            <small>
+                                Quick delivery to your doorstep
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-benefit">
+
+                        <span>↩️</span>
+
+                        <div>
+
+                            <strong>
+                                Easy Returns
+                            </strong>
+
+                            <small>
+                                Shop with confidence
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-benefit">
+
+                        <span>🔒</span>
+
+                        <div>
+
+                            <strong>
+                                Secure Shopping
+                            </strong>
+
+                            <small>
+                                Your information stays protected
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUCT DETAILS
+        ================================================== -->
+
+        <section class="product-details-section">
+
+
+            <!-- TABS -->
+
+            <div class="product-tabs">
+
+                <button
+                    type="button"
+                    class="product-tab active"
+                    data-tab="description"
+                >
+                    Description
+                </button>
+
+                <button
+                    type="button"
+                    class="product-tab"
+                    data-tab="reviews"
+                >
+                    Reviews
+                </button>
+
+                <button
+                    type="button"
+                    class="product-tab"
+                    data-tab="shipping"
+                >
+                    Shipping &amp; Returns
+                </button>
+
+            </div>
+
+
+            <!-- DESCRIPTION TAB -->
+
+            <div
+                class="product-tab-content active"
+                id="description"
+            >
+
+                <h2>
+                    Product Description
+                </h2>
+
+                <p id="descriptionText">
+                    Find everything you need to know about this product here.
+                </p>
+
+            </div>
+
+
+            <!-- REVIEWS TAB -->
+
+            <div
+                class="product-tab-content"
+                id="reviews"
+            >
+
+                <div class="reviews-header">
+
+                    <div>
+
+                        <h2>
+                            Customer Reviews
+                        </h2>
+
+                        <div class="large-rating">
+
+                            <strong id="largeRating">
+                                0.0
+                            </strong>
+
+                            <div>
+
+                                <div
+                                    class="product-stars"
+                                    id="largeStars"
+                                >
+                                    ★★★★★
+                                </div>
+
+                                <small>
+                                    Based on customer ratings
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="reviewsList">
+
+                    <div class="review-empty">
+                        Customer reviews will appear here.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHIPPING TAB -->
+
+            <div
+                class="product-tab-content"
+                id="shipping"
+            >
+
+                <h2>
+                    Shipping &amp; Returns
+                </h2>
+
+                <div class="shipping-info-grid">
+
+
+                    <div>
+
+                        <span>🚚</span>
+
+                        <strong>
+                            Delivery
+                        </strong>
+
+                        <p>
+                            Your order will be prepared and delivered
+                            to your selected delivery address.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>↩️</span>
+
+                        <strong>
+                            Easy Returns
+                        </strong>
+
+                        <p>
+                            Eligible products can be returned according
+                            to our return policy.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>🔒</span>
+
+                        <strong>
+                            Secure Payment
+                        </strong>
+
+                        <p>
+                            Your payment information is handled securely.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SIMILAR PRODUCTS
+        ================================================== -->
+
+        <section class="similar-products-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        YOU MAY ALSO LIKE
+                    </span>
+
+                    <h2>
+                        Similar Products
+                    </h2>
+
+                </div>
+
+
+                <a href="shop.html">
+                    View all products →
+                </a>
+
+            </div>
+
+
+            <div
+                class="similar-products-grid"
+                id="similarProducts"
+            >
+                <!-- JavaScript loads similar products -->
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+
+    <section class="newsletter">
+
+        <div class="newsletter-inner">
+
+            <div>
+
+                <span>
+                    STAY IN THE LOOP
+                </span>
+
+                <h2>
+                    Get the latest deals &amp; updates.
+                </h2>
+
+                <p>
+                    Subscribe for new products, special offers
+                    and shopping updates.
+                </p>
+
+            </div>
+
+
+            <form id="newsletterForm">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <button type="submit">
+                    Subscribe
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    CART
+                </a>
+
+                <p>
+                    Your trusted online shopping destination
+                    for quality products and great deals.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="shop.html">
+                    All Products
+                </a>
+
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+
+                <a href="shop.html?category=Home">
+                    Home &amp; Living
+                </a>
+
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Customer Care
+                </h3>
+
+                <a href="orders.html">
+                    My Orders
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="returns.html">
+                    Returns
+                </a>
+
+                <a href="support.html">
+                    Help &amp; Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="profile.html">
+                    My Account
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CART. All rights reserved.
+            </span>
+
+            <span>
+                Shop smart. Shop better.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="product-toast"
+        id="productToast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+    <script src="js/product.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="Manage your delivery addresses on CART"
+>
+
+<title>My Addresses | CART</title>
+
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <div class="container header-top-inner">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <span>CART</span>
+            </a>
+
+
+            <div class="header-search">
+
+                <form id="searchForm">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search products..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="submit"
+                        aria-label="Search"
+                    >
+                        Search
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+                    <span>♡</span>
+                    <small>Wishlist</small>
+                </a>
+
+
+                <a
+                    href="account.html"
+                    class="header-action"
+                >
+                    <span>♙</span>
+                    <small>Account</small>
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="header-action cart-action"
+                >
+                    <span>🛒</span>
+                    <small>Cart</small>
+
+                    <b id="cartCount">0</b>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <nav class="main-nav">
+
+        <div class="container nav-inner">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="shop.html?category=Home">
+                Home & Living
+            </a>
+
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="addresses-page">
+
+    <div class="container">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    ACCOUNT
+                </span>
+
+                <h1>
+                    My Addresses
+                </h1>
+
+                <p>
+                    Save your delivery addresses for
+                    faster and easier checkout.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addAddressButton"
+                class="primary-button"
+            >
+                + Add New Address
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ADDRESS FORM
+        ================================================== -->
+
+        <section
+            id="addressFormSection"
+            class="address-form-section"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DELIVERY
+                    </span>
+
+                    <h2 id="addressFormTitle">
+                        Add New Address
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="addressForm"
+                novalidate
+            >
+
+                <input
+                    type="hidden"
+                    id="addressId"
+                >
+
+
+                <div class="form-grid">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label for="addressName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="addressName"
+                            placeholder="Enter full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <div
+                            id="addressNameError"
+                            class="form-error"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="addressPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="addressPhone"
+                            placeholder="08012345678"
+                            autocomplete="tel"
+                            required
+                        >
+
+                        <div
+                            id="addressPhoneError"
+                            class="form-error"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- STREET -->
+
+                    <div
+                        class="form-group form-group-full"
+                    >
+
+                        <label for="addressStreet">
+                            Street Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="addressStreet"
+                            placeholder="House number, street name"
+                            autocomplete="street-address"
+                            required
+                        >
+
+                        <div
+                            id="addressStreetError"
+                            class="form-error"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group">
+
+                        <label for="addressState">
+                            State
+                        </label>
+
+                        <select
+                            id="addressState"
+                            required
+                        >
+
+                            <option value="">
+                                Select state
+                            </option>
+
+                            <option value="Abia">
+                                Abia
+                            </option>
+
+                            <option value="Adamawa">
+                                Adamawa
+                            </option>
+
+                            <option value="Akwa Ibom">
+                                Akwa Ibom
+                            </option>
+
+                            <option value="Anambra">
+                                Anambra
+                            </option>
+
+                            <option value="Bauchi">
+                                Bauchi
+                            </option>
+
+                            <option value="Bayelsa">
+                                Bayelsa
+                            </option>
+
+                            <option value="Benue">
+                                Benue
+                            </option>
+
+                            <option value="Borno">
+                                Borno
+                            </option>
+
+                            <option value="Cross River">
+                                Cross River
+                            </option>
+
+                            <option value="Delta">
+                                Delta
+                            </option>
+
+                            <option value="Ebonyi">
+                                Ebonyi
+                            </option>
+
+                            <option value="Edo">
+                                Edo
+                            </option>
+
+                            <option value="Ekiti">
+                                Ekiti
+                            </option>
+
+                            <option value="Enugu">
+                                Enugu
+                            </option>
+
+                            <option value="Gombe">
+                                Gombe
+                            </option>
+
+                            <option value="Imo">
+                                Imo
+                            </option>
+
+                            <option value="Jigawa">
+                                Jigawa
+                            </option>
+
+                            <option value="Kaduna">
+                                Kaduna
+                            </option>
+
+                            <option value="Kano">
+                                Kano
+                            </option>
+
+                            <option value="Katsina">
+                                Katsina
+                            </option>
+
+                            <option value="Kebbi">
+                                Kebbi
+                            </option>
+
+                            <option value="Kogi">
+                                Kogi
+                            </option>
+
+                            <option value="Kwara">
+                                Kwara
+                            </option>
+
+                            <option value="Lagos">
+                                Lagos
+                            </option>
+
+                            <option value="Nasarawa">
+                                Nasarawa
+                            </option>
+
+                            <option value="Niger">
+                                Niger
+                            </option>
+
+                            <option value="Ogun">
+                                Ogun
+                            </option>
+
+                            <option value="Ondo">
+                                Ondo
+                            </option>
+
+                            <option value="Osun">
+                                Osun
+                            </option>
+
+                            <option value="Oyo">
+                                Oyo
+                            </option>
+
+                            <option value="Plateau">
+                                Plateau
+                            </option>
+
+                            <option value="Rivers">
+                                Rivers
+                            </option>
+
+                            <option value="Sokoto">
+                                Sokoto
+                            </option>
+
+                            <option value="Taraba">
+                                Taraba
+                            </option>
+
+                            <option value="Yobe">
+                                Yobe
+                            </option>
+
+                            <option value="Zamfara">
+                                Zamfara
+                            </option>
+
+                            <option value="FCT">
+                                Federal Capital Territory
+                            </option>
+
+                        </select>
+
+                        <div
+                            id="addressStateError"
+                            class="form-error"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- CITY -->
+
+                    <div class="form-group">
+
+                        <label for="addressCity">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="addressCity"
+                            placeholder="Enter city"
+                            autocomplete="address-level2"
+                            required
+                        >
+
+                        <div
+                            id="addressCityError"
+                            class="form-error"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- POSTAL CODE -->
+
+                    <div class="form-group">
+
+                        <label for="addressPostalCode">
+                            Postal Code
+                            <span>(Optional)</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="addressPostalCode"
+                            placeholder="Postal code"
+                            autocomplete="postal-code"
+                        >
+
+                    </div>
+
+
+
+                    <!-- ADDRESS LABEL -->
+
+                    <div class="form-group">
+
+                        <label for="addressLabel">
+                            Address Label
+                        </label>
+
+                        <select id="addressLabel">
+
+                            <option value="Home">
+                                Home
+                            </option>
+
+                            <option value="Work">
+                                Work
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DEFAULT ADDRESS -->
+
+                <label class="checkbox-row">
+
+                    <input
+                        type="checkbox"
+                        id="defaultAddress"
+                    >
+
+                    <span>
+                        Set as my default delivery address
+                    </span>
+
+                </label>
+
+
+
+                <!-- FORM ACTIONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="cancelAddressButton"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="saveAddressButton"
+                        class="primary-button"
+                    >
+                        Save Address
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="addressFormMessage"
+                    class="auth-message"
+                    role="alert"
+                ></div>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SAVED ADDRESSES
+        ================================================== -->
+
+        <section class="saved-addresses">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SAVED
+                    </span>
+
+                    <h2>
+                        Your Delivery Addresses
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="addressesList"
+                class="addresses-list"
+            >
+                <!-- Addresses rendered by JavaScript -->
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="addressesEmpty"
+                class="addresses-empty"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    📍
+                </div>
+
+                <h2>
+                    No saved addresses
+                </h2>
+
+                <p>
+                    Add a delivery address so you can
+                    check out faster next time.
+                </p>
+
+                <button
+                    type="button"
+                    id="emptyAddAddressButton"
+                    class="primary-button"
+                >
+                    Add Your First Address
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACCOUNT LINKS
+        ================================================== -->
+
+        <section class="account-shortcuts">
+
+            <a href="account.html">
+                <span>👤</span>
+                <strong>My Account</strong>
+                <small>Account overview</small>
+            </a>
+
+            <a href="orders.html">
+                <span>📦</span>
+                <strong>My Orders</strong>
+                <small>Track your orders</small>
+            </a>
+
+            <a href="wishlist.html">
+                <span>♡</span>
+                <strong>Wishlist</strong>
+                <small>Saved products</small>
+            </a>
+
+            <a href="notifications.html">
+                <span>🔔</span>
+                <strong>Notifications</strong>
+                <small>View updates</small>
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <h3>CART</h3>
+
+                <p>
+                    Your trusted online marketplace for
+                    quality products at great prices.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Shop
+                </h4>
+
+                <a href="shop.html">
+                    All Products
+                </a>
+
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+
+                <a href="shop.html?category=Home">
+                    Home & Living
+                </a>
+
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Help
+                </h4>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+                <a href="shipping.html">
+                    Shipping
+                </a>
+
+                <a href="return.html">
+                    Returns
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Account
+                </h4>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="orders.html">
+                    My Orders
+                </a>
+
+                <a href="addresses.html">
+                    Addresses
+                </a>
+
+                <a href="notifications.html">
+                    Notifications
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 CART. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/addresses.js"></script>
+
+</body>
+</html>

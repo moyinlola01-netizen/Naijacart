@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | CART.</title>
+
+    <meta
+        name="description"
+        content="Manage your CART account, orders, wishlist, cart and shopping preferences."
+    >
+
+    <link rel="stylesheet" href="css/account.css?v=2">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP PROMO BAR
+    ====================================================== -->
+
+    <div class="account-promo">
+        <div class="account-promo-inner">
+            <span>FREE DELIVERY ON SELECTED ORDERS</span>
+            <span class="promo-divider">•</span>
+            <span>SHOP SMART. SHOP CART.</span>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         ACCOUNT HEADER
+    ====================================================== -->
+
+    <header class="account-header">
+
+        <div class="account-header-inner">
+
+            <a href="index.html" class="account-logo">
+                <span>CART</span><b>.</b>
+            </a>
+
+
+            <nav class="account-main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                    <span id="headerCartCount" class="header-count">0</span>
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                    <span id="headerWishlistCount" class="header-count">0</span>
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="account.html" class="active">
+                    Account
+                </a>
+
+            </nav>
+
+
+            <div class="account-header-actions">
+
+                <a href="shop.html" class="continue-shopping">
+                    Continue Shopping
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="logout-button"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         ACCOUNT PAGE
+    ====================================================== -->
+
+    <main class="account-page">
+
+        <!-- =================================================
+             ACCOUNT HERO
+        ================================================== -->
+
+        <section class="account-hero">
+
+            <div class="account-hero-content">
+
+                <span class="account-eyebrow">
+                    MY CART ACCOUNT
+                </span>
+
+                <h1>
+                    Welcome back,
+                    <span id="heroUserName">Shopper</span>
+                    <span class="wave">👋</span>
+                </h1>
+
+                <p>
+                    Everything you need to manage your CART
+                    account, orders and shopping activity in one place.
+                </p>
+
+            </div>
+
+
+            <div class="account-member-card">
+
+                <div class="member-avatar" id="memberAvatar">
+                    S
+                </div>
+
+                <div class="member-details">
+
+                    <span class="member-label">
+                        CART MEMBER
+                    </span>
+
+                    <strong id="memberName">
+                        Shopper
+                    </strong>
+
+                    <span id="memberEmail">
+                        Sign in to view your account
+                    </span>
+
+                </div>
+
+                <span class="member-status">
+                    ● Active
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DASHBOARD GRID
+        ================================================== -->
+
+        <section class="account-dashboard">
+
+            <!-- =============================================
+                 PROFILE CARD
+            ============================================== -->
+
+            <article class="dashboard-card profile-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            PROFILE
+                        </span>
+
+                        <h2>
+                            Personal Information
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        ◉
+                    </span>
+
+                </div>
+
+
+                <div class="profile-main">
+
+                    <div
+                        class="large-avatar"
+                        id="profileAvatar"
+                    >
+                        S
+                    </div>
+
+                    <div class="profile-text">
+
+                        <h3 id="profileName">
+                            Shopper
+                        </h3>
+
+                        <p id="profileEmail">
+                            Sign in to view your details
+                        </p>
+
+                        <span id="profileMemberDate">
+                            CART member
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="outline-button"
+                    id="editProfileButton"
+                >
+                    Edit Profile
+                    <span>→</span>
+                </button>
+
+            </article>
+
+
+            <!-- =============================================
+                 ORDER STATISTICS
+            ============================================== -->
+
+            <article class="dashboard-card statistics-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            SHOPPING ACTIVITY
+                        </span>
+
+                        <h2>
+                            Your Overview
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        ✦
+                    </span>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <a
+                        href="orders.html"
+                        class="account-stat pending-stat"
+                    >
+                        <span class="stat-number" id="pendingOrders">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Pending
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="orders.html"
+                        class="account-stat processing-stat"
+                    >
+                        <span class="stat-number" id="processingOrders">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Processing
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="orders.html"
+                        class="account-stat shipped-stat"
+                    >
+                        <span class="stat-number" id="shippedOrders">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Shipped
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="orders.html"
+                        class="account-stat delivered-stat"
+                    >
+                        <span class="stat-number" id="deliveredOrders">
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Delivered
+                        </span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 QUICK ACTIONS
+            ============================================== -->
+
+            <article class="dashboard-card quick-actions-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            QUICK ACCESS
+                        </span>
+
+                        <h2>
+                            Shopping Shortcuts
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions-grid">
+
+                    <a href="orders.html" class="quick-action">
+                        <span class="quick-icon">
+                            📦
+                        </span>
+
+                        <span>
+                            <strong>My Orders</strong>
+                            <small>Track purchases</small>
+                        </span>
+
+                        <b>→</b>
+                    </a>
+
+
+                    <a href="wishlist.html" class="quick-action">
+                        <span class="quick-icon">
+                            ♡
+                        </span>
+
+                        <span>
+                            <strong>Wishlist</strong>
+                            <small>Saved products</small>
+                        </span>
+
+                        <b>→</b>
+                    </a>
+
+
+                    <a href="cart.html" class="quick-action">
+                        <span class="quick-icon">
+                            🛒
+                        </span>
+
+                        <span>
+                            <strong>My Cart</strong>
+                            <small>Items waiting</small>
+                        </span>
+
+                        <b>→</b>
+                    </a>
+
+
+                    <a href="shipping.html" class="quick-action">
+                        <span class="quick-icon">
+                            📍
+                        </span>
+
+                        <span>
+                            <strong>Delivery</strong>
+                            <small>Shipping information</small>
+                        </span>
+
+                        <b>→</b>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 RECENT ORDERS
+            ============================================== -->
+
+            <article class="dashboard-card recent-orders-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            ORDER HISTORY
+                        </span>
+
+                        <h2>
+                            Recent Orders
+                        </h2>
+                    </div>
+
+                    <a
+                        href="orders.html"
+                        class="view-all"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="recent-orders-list"
+                    id="recentOrders"
+                >
+
+                    <div class="no-orders">
+
+                        <div class="no-orders-icon">
+                            📦
+                        </div>
+
+                        <h3>
+                            No orders yet
+                        </h3>
+
+                        <p>
+                            Your recent purchases will appear here.
+                        </p>
+
+                        <a href="shop.html">
+                            Start Shopping
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 WISHLIST / CART SNAPSHOT
+            ============================================== -->
+
+            <article class="dashboard-card shopping-snapshot-card">
+
+                <div class="snapshot-top">
+
+                    <div>
+                        <span class="card-kicker">
+                            SAVED SHOPPING
+                        </span>
+
+                        <h2>
+                            Keep Shopping
+                        </h2>
+                    </div>
+
+                    <span class="snapshot-symbol">
+                        ♡
+                    </span>
+
+                </div>
+
+
+                <div class="snapshot-items">
+
+                    <a
+                        href="wishlist.html"
+                        class="snapshot-item"
+                    >
+
+                        <div class="snapshot-number">
+                            <span id="wishlistTotal">
+                                0
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Wishlist
+                            </strong>
+
+                            <small>
+                                Saved products
+                            </small>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="cart.html"
+                        class="snapshot-item"
+                    >
+
+                        <div class="snapshot-number">
+                            <span id="cartTotal">
+                                0
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>
+                                Cart Items
+                            </strong>
+
+                            <small>
+                                Ready to checkout
+                            </small>
+                        </div>
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 ACCOUNT SETTINGS
+            ============================================== -->
+
+            <article class="dashboard-card settings-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            ACCOUNT CONTROL
+                        </span>
+
+                        <h2>
+                            Settings
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        ⚙
+                    </span>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+                    <button
+                        type="button"
+                        class="setting-tile"
+                        id="passwordSetting"
+                    >
+                        <span class="setting-icon">
+                            🔐
+                        </span>
+
+                        <strong>
+                            Password & Security
+                        </strong>
+
+                        <small>
+                            Keep your account secure
+                        </small>
+
+                        <b>→</b>
+                    </button>
+
+
+                    <a
+                        href="shipping.html"
+                        class="setting-tile"
+                    >
+                        <span class="setting-icon">
+                            📍
+                        </span>
+
+                        <strong>
+                            Delivery Information
+                        </strong>
+
+                        <small>
+                            Shipping and returns
+                        </small>
+
+                        <b>→</b>
+                    </a>
+
+
+                    <a
+                        href="support.html"
+                        class="setting-tile"
+                    >
+                        <span class="setting-icon">
+                            💬
+                        </span>
+
+                        <strong>
+                            Contact Support
+                        </strong>
+
+                        <small>
+                            Get help from CART
+                        </small>
+
+                        <b>→</b>
+                    </a>
+
+
+                    <a
+                        href="faq.html"
+                        class="setting-tile"
+                    >
+                        <span class="setting-icon">
+                            ?
+                        </span>
+
+                        <strong>
+                            Help Center
+                        </strong>
+
+                        <small>
+                            Find quick answers
+                        </small>
+
+                        <b>→</b>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 SECURITY BANNER
+            ============================================== -->
+
+            <article class="security-banner">
+
+                <div class="security-icon">
+                    ✓
+                </div>
+
+                <div class="security-text">
+
+                    <span>
+                        ACCOUNT SECURITY
+                    </span>
+
+                    <strong>
+                        Your account is protected
+                    </strong>
+
+                    <p>
+                        Keep your password private and always
+                        sign out when using a shared device.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="securityButton"
+                >
+                    Manage Security
+                    <span>→</span>
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         EDIT PROFILE MODAL
+    ====================================================== -->
+
+    <div
+        class="account-modal"
+        id="profileModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-modal></div>
+
+        <div class="modal-box">
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close-modal
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <span class="modal-kicker">
+                YOUR PROFILE
+            </span>
+
+            <h2>
+                Edit Personal Information
+            </h2>
+
+            <p>
+                Update the information connected to your CART account.
+            </p>
+
+
+            <form id="profileForm">
+
+                <label>
+                    Full Name
+
+                    <input
+                        type="text"
+                        id="editName"
+                        name="name"
+                        placeholder="Your full name"
+                        autocomplete="name"
+                    >
+                </label>
+
+
+                <label>
+                    Email Address
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                    >
+                </label>
+
+
+                <label>
+                    Phone Number
+
+                    <input
+                        type="tel"
+                        id="editPhone"
+                        name="phone"
+                        placeholder="08012345678"
+                        autocomplete="tel"
+                    >
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="modal-submit"
+                >
+                    Save Changes
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="account-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    CART<span>.</span>
+                </a>
+
+                <p>
+                    Your trusted online shopping destination.
+                    Shop smart. Shop CART.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="shop.html">
+                    All Products
+                </a>
+
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+
+                <a href="shop.html?category=Home">
+                    Home
+                </a>
+
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Help
+                </h3>
+
+                <a href="shipping.html">
+                    Shipping & Returns
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CART. All rights reserved.
+            </span>
+
+            <span>
+                SHOP SMART. SHOP CART.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="account-toast"
+        id="accountToast"
+    ></div>
+
+
+    <script src="js/account.js?v=2"></script>
+
+</body>
+</html>

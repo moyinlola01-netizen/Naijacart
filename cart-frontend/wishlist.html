@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wishlist | CART</title>
+
+    <link rel="stylesheet" href="css/wishlist.css?v=2">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP PROMO
+    ====================================================== -->
+
+    <div class="wishlist-promo">
+        <span>FREE DELIVERY ON SELECTED ORDERS</span>
+        <strong>SHOP SMART. SHOP CART.</strong>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="wishlist-header">
+
+        <div class="wishlist-header-inner">
+
+            <a href="index.html" class="wishlist-logo">
+                <strong>CART.</strong>
+                <span>SHOP SMART</span>
+            </a>
+
+
+            <nav class="wishlist-nav">
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="cart.html">Cart</a>
+                <a href="wishlist.html" class="active">Wishlist</a>
+                <a href="orders.html">Orders</a>
+                <a href="account.html">Account</a>
+
+            </nav>
+
+
+            <div class="wishlist-header-actions">
+
+                <a href="shop.html" class="header-shop">
+                    Continue Shopping
+                </a>
+
+                <a href="cart.html" class="header-cart">
+                    Cart
+                    <span id="cartCount">0</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section class="wishlist-hero">
+
+            <div class="wishlist-hero-content">
+
+                <span class="wishlist-eyebrow">
+                    SAVED FOR LATER
+                </span>
+
+                <h1>
+                    My Wishlist
+                    <span>Things worth keeping.</span>
+                </h1>
+
+                <p>
+                    Save the products you love and come back whenever
+                    you're ready to make them yours.
+                </p>
+
+                <div class="wishlist-hero-actions">
+
+                    <a href="shop.html" class="primary-button">
+                        Explore Shop
+                        <span>→</span>
+                    </a>
+
+                    <a href="cart.html" class="secondary-button">
+                        View Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="wishlist-hero-card">
+
+                <div class="hero-card-top">
+                    <span>MY SAVED ITEMS</span>
+                    <span class="heart-symbol">♡</span>
+                </div>
+
+                <strong id="wishlistCountHero">
+                    0
+                </strong>
+
+                <p>
+                    products saved to your wishlist
+                </p>
+
+                <div class="hero-card-line"></div>
+
+                <div class="hero-card-bottom">
+                    <span>SHOP</span>
+                    <span>LOVE</span>
+                    <span>SAVE</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WISHLIST TOOLBAR
+        ====================================================== -->
+
+        <section class="wishlist-area">
+
+            <div class="wishlist-toolbar">
+
+                <div>
+                    <span class="toolbar-label">
+                        YOUR COLLECTION
+                    </span>
+
+                    <h2>
+                        Saved Products
+                    </h2>
+
+                    <p id="wishlistSummary">
+                        0 products saved
+                    </p>
+                </div>
+
+
+                <div class="wishlist-tools">
+
+                    <label class="wishlist-search">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="wishlistSearch"
+                            placeholder="Search wishlist...">
+
+                    </label>
+
+
+                    <select id="wishlistSort">
+
+                        <option value="default">
+                            Sort: Default
+                        </option>
+
+                        <option value="price-low">
+                            Price: Low to High
+                        </option>
+
+                        <option value="price-high">
+                            Price: High to Low
+                        </option>
+
+                        <option value="rating">
+                            Highest Rated
+                        </option>
+
+                        <option value="discount">
+                            Biggest Discount
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PRODUCT GRID
+            ================================================== -->
+
+            <div
+                id="wishlistGrid"
+                class="wishlist-grid">
+            </div>
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <section
+                id="emptyWishlist"
+                class="empty-wishlist"
+                style="display:none;">
+
+                <div class="empty-icon">
+                    ♡
+                </div>
+
+                <span class="empty-eyebrow">
+                    NOTHING SAVED YET
+                </span>
+
+                <h2>
+                    Your wishlist is waiting.
+                </h2>
+
+                <p>
+                    Browse our collection and tap the heart on products
+                    you love. They'll stay here until you're ready.
+                </p>
+
+                <a href="shop.html" class="empty-button">
+                    Start Shopping →
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOGIN STATE
+            ================================================== -->
+
+            <section
+                id="loginWishlist"
+                class="login-wishlist"
+                style="display:none;">
+
+                <div class="login-wishlist-icon">
+                    ♡
+                </div>
+
+                <div>
+
+                    <span class="empty-eyebrow">
+                        YOUR WISHLIST
+                    </span>
+
+                    <h2>
+                        Sign in to save your favourites.
+                    </h2>
+
+                    <p>
+                        Create an account or sign in to keep your
+                        favourite products saved across your shopping
+                        experience.
+                    </p>
+
+                    <div class="login-wishlist-actions">
+
+                        <a href="login.html">
+                            Login →
+                        </a>
+
+                        <a href="register.html">
+                            Create Account
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DISCOVERY SECTION
+            ================================================== -->
+
+            <section class="wishlist-discovery">
+
+                <div class="discovery-heading">
+
+                    <span>
+                        KEEP EXPLORING
+                    </span>
+
+                    <h2>
+                        Find something else you'll love.
+                    </h2>
+
+                </div>
+
+
+                <div class="discovery-grid">
+
+                    <a href="shop.html?category=Electronics"
+                       class="discovery-card electronics">
+
+                        <div>
+                            <span>01</span>
+                            <h3>Electronics</h3>
+                            <p>Smart tech for everyday life.</p>
+                        </div>
+
+                        <strong>→</strong>
+
+                    </a>
+
+
+                    <a href="shop.html?category=Fashion"
+                       class="discovery-card fashion">
+
+                        <div>
+                            <span>02</span>
+                            <h3>Fashion</h3>
+                            <p>Fresh pieces for your style.</p>
+                        </div>
+
+                        <strong>→</strong>
+
+                    </a>
+
+
+                    <a href="shop.html?category=Home"
+                       class="discovery-card home">
+
+                        <div>
+                            <span>03</span>
+                            <h3>Home</h3>
+                            <p>Make your space feel better.</p>
+                        </div>
+
+                        <strong>→</strong>
+
+                    </a>
+
+
+                    <a href="shop.html?category=Beauty"
+                       class="discovery-card beauty">
+
+                        <div>
+                            <span>04</span>
+                            <h3>Beauty</h3>
+                            <p>Everyday care and essentials.</p>
+                        </div>
+
+                        <strong>→</strong>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+
+    <section class="wishlist-newsletter">
+
+        <div>
+
+            <span>
+                CART. NEWSLETTER
+            </span>
+
+            <h2>
+                Stay in the loop.
+            </h2>
+
+            <p>
+                Get product updates, special offers and shopping
+                inspiration delivered to you.
+            </p>
+
+        </div>
+
+
+        <form id="wishlistNewsletter">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Your email address"
+                required>
+
+            <button type="submit">
+                Subscribe →
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="wishlist-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    CART.
+                </a>
+
+                <p>
+                    Your trusted online shopping destination.
+                    Shop smart. Shop CART.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>SHOP</h4>
+
+                <a href="shop.html">All Products</a>
+                <a href="shop.html?category=Electronics">Electronics</a>
+                <a href="shop.html?category=Fashion">Fashion</a>
+                <a href="shop.html?category=Home">Home</a>
+                <a href="shop.html?category=Beauty">Beauty</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>ACCOUNT</h4>
+
+                <a href="account.html">My Account</a>
+                <a href="orders.html">Orders</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Cart</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>HELP</h4>
+
+                <a href="shipping.html">Shipping & Returns</a>
+                <a href="support.html">Support</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CART. All rights reserved.
+            </span>
+
+            <span>
+                SHOP SMART. SHOP CART.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="wishlistToast"
+        class="wishlist-toast">
+    </div>
+
+
+    <script src="js/wishlist.js?v=2"></script>
+
+</body>
+</html>

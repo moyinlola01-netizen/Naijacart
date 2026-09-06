@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | NaijaCart</title>
+
+    <meta
+        name="description"
+        content="Complete your NaijaCart order securely."
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a
+                href="index.html"
+                class="site-logo"
+            >
+                Naija<span>Cart</span>
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="login.html"
+                    class="account-link"
+                >
+                    <span class="account-icon">
+                        ♙
+                    </span>
+
+                    <span>
+                        Account
+                    </span>
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="cart-link"
+                >
+
+                    <span class="cart-icon">
+                        🛒
+                    </span>
+
+                    <span class="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CHECKOUT PROGRESS
+    ====================================================== -->
+
+    <section class="checkout-progress-section">
+
+        <div class="container">
+
+            <div class="checkout-progress">
+
+                <div
+                    class="checkout-step active"
+                >
+
+                    <span>
+                        1
+                    </span>
+
+                    <strong>
+                        Information
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-progress-line"></div>
+
+
+                <div class="checkout-step">
+
+                    <span>
+                        2
+                    </span>
+
+                    <strong>
+                        Delivery
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-progress-line"></div>
+
+
+                <div class="checkout-step">
+
+                    <span>
+                        3
+                    </span>
+
+                    <strong>
+                        Confirmation
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BREADCRUMB
+    ====================================================== -->
+
+    <div class="container">
+
+        <nav
+            class="breadcrumb"
+            aria-label="Breadcrumb"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <span>
+                /
+            </span>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+            <span>
+                /
+            </span>
+
+            <span>
+                Checkout
+            </span>
+
+        </nav>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CHECKOUT MAIN
+    ====================================================== -->
+
+    <main class="container checkout-page">
+
+
+        <div class="checkout-page-header">
+
+            <span class="section-eyebrow">
+                SECURE CHECKOUT
+            </span>
+
+            <h1>
+                Complete Your Order
+            </h1>
+
+            <p>
+                Enter your details below to complete your purchase.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CHECKOUT LAYOUT
+        ================================================== -->
+
+        <section class="checkout-layout">
+
+
+            <!-- =================================================
+                 CUSTOMER INFORMATION
+            ================================================== -->
+
+            <div class="checkout-form-section">
+
+
+                <!-- LOGIN NOTICE -->
+
+                <div
+                    id="checkoutLoginNotice"
+                    class="checkout-notice"
+                    style="display:none;"
+                >
+
+                    <div>
+
+                        <strong>
+                            You're not logged in.
+                        </strong>
+
+                        <p>
+                            Log in to keep your orders connected
+                            to your account.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="login.html?redirect=checkout.html"
+                        class="btn btn-secondary"
+                    >
+                        Log In
+                    </a>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <div class="checkout-card">
+
+                    <div class="checkout-card-header">
+
+                        <div>
+
+                            <span class="checkout-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Contact Information
+                                </h2>
+
+                                <p>
+                                    Where can we reach you?
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label
+                                for="checkoutFullName"
+                            >
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutFullName"
+                                name="full_name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="fullNameError"
+                            >
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="checkoutEmail"
+                            >
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="checkoutEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="emailError"
+                            >
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="checkoutPhone"
+                            >
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="checkoutPhone"
+                                name="phone"
+                                placeholder="08012345678"
+                                autocomplete="tel"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="phoneError"
+                            >
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DELIVERY ADDRESS
+                ================================================== -->
+
+                <div class="checkout-card">
+
+                    <div class="checkout-card-header">
+
+                        <div>
+
+                            <span class="checkout-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Delivery Address
+                                </h2>
+
+                                <p>
+                                    Where should we deliver your order?
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group full-width">
+
+                            <label
+                                for="checkoutAddress"
+                            >
+                                Street Address
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutAddress"
+                                name="address"
+                                placeholder="House number, street name"
+                                autocomplete="street-address"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="addressError"
+                            >
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="checkoutCity"
+                            >
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutCity"
+                                name="city"
+                                placeholder="Enter city"
+                                autocomplete="address-level2"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="cityError"
+                            >
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="checkoutState"
+                            >
+                                State
+                            </label>
+
+                            <select
+                                id="checkoutState"
+                                name="state"
+                                required
+                            >
+
+                                <option
+                                    value=""
+                                >
+                                    Select state
+                                </option>
+
+                                <option value="Abia">
+                                    Abia
+                                </option>
+
+                                <option value="Adamawa">
+                                    Adamawa
+                                </option>
+
+                                <option value="Akwa Ibom">
+                                    Akwa Ibom
+                                </option>
+
+                                <option value="Anambra">
+                                    Anambra
+                                </option>
+
+                                <option value="Bauchi">
+                                    Bauchi
+                                </option>
+
+                                <option value="Bayelsa">
+                                    Bayelsa
+                                </option>
+
+                                <option value="Benue">
+                                    Benue
+                                </option>
+
+                                <option value="Borno">
+                                    Borno
+                                </option>
+
+                                <option value="Cross River">
+                                    Cross River
+                                </option>
+
+                                <option value="Delta">
+                                    Delta
+                                </option>
+
+                                <option value="Ebonyi">
+                                    Ebonyi
+                                </option>
+
+                                <option value="Edo">
+                                    Edo
+                                </option>
+
+                                <option value="Ekiti">
+                                    Ekiti
+                                </option>
+
+                                <option value="Enugu">
+                                    Enugu
+                                </option>
+
+                                <option value="FCT">
+                                    Federal Capital Territory
+                                </option>
+
+                                <option value="Gombe">
+                                    Gombe
+                                </option>
+
+                                <option value="Imo">
+                                    Imo
+                                </option>
+
+                                <option value="Jigawa">
+                                    Jigawa
+                                </option>
+
+                                <option value="Kaduna">
+                                    Kaduna
+                                </option>
+
+                                <option value="Kano">
+                                    Kano
+                                </option>
+
+                                <option value="Katsina">
+                                    Katsina
+                                </option>
+
+                                <option value="Kebbi">
+                                    Kebbi
+                                </option>
+
+                                <option value="Kogi">
+                                    Kogi
+                                </option>
+
+                                <option value="Kwara">
+                                    Kwara
+                                </option>
+
+                                <option value="Lagos">
+                                    Lagos
+                                </option>
+
+                                <option value="Nasarawa">
+                                    Nasarawa
+                                </option>
+
+                                <option value="Niger">
+                                    Niger
+                                </option>
+
+                                <option value="Ogun">
+                                    Ogun
+                                </option>
+
+                                <option value="Ondo">
+                                    Ondo
+                                </option>
+
+                                <option value="Osun">
+                                    Osun
+                                </option>
+
+                                <option value="Oyo">
+                                    Oyo
+                                </option>
+
+                                <option value="Plateau">
+                                    Plateau
+                                </option>
+
+                                <option value="Rivers">
+                                    Rivers
+                                </option>
+
+                                <option value="Sokoto">
+                                    Sokoto
+                                </option>
+
+                                <option value="Taraba">
+                                    Taraba
+                                </option>
+
+                                <option value="Yobe">
+                                    Yobe
+                                </option>
+
+                                <option value="Zamfara">
+                                    Zamfara
+                                </option>
+
+                            </select>
+
+                            <small
+                                class="form-error"
+                                id="stateError"
+                            >
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label
+                                for="checkoutPostalCode"
+                            >
+                                Postal Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="checkoutPostalCode"
+                                name="postal_code"
+                                placeholder="Optional"
+                                autocomplete="postal-code"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PAYMENT
+                ================================================== -->
+
+                <div class="checkout-card">
+
+                    <div class="checkout-card-header">
+
+                        <div>
+
+                            <span class="checkout-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Payment Method
+                                </h2>
+
+                                <p>
+                                    Select how you'd like to pay.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-options">
+
+
+                        <!-- PAY ON DELIVERY -->
+
+                        <label
+                            class="payment-option"
+                        >
+
+                            <input
+                                type="radio"
+                                name="payment_method"
+                                value="pay_on_delivery"
+                                checked
+                            >
+
+                            <span
+                                class="payment-radio"
+                            >
+                            </span>
+
+
+                            <span
+                                class="payment-icon"
+                            >
+                                💵
+                            </span>
+
+
+                            <span
+                                class="payment-content"
+                            >
+
+                                <strong>
+                                    Pay on Delivery
+                                </strong>
+
+                                <small>
+                                    Pay when your order arrives.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- BANK TRANSFER -->
+
+                        <label
+                            class="payment-option"
+                        >
+
+                            <input
+                                type="radio"
+                                name="payment_method"
+                                value="bank_transfer"
+                            >
+
+                            <span
+                                class="payment-radio"
+                            >
+                            </span>
+
+
+                            <span
+                                class="payment-icon"
+                            >
+                                🏦
+                            </span>
+
+
+                            <span
+                                class="payment-content"
+                            >
+
+                                <strong>
+                                    Bank Transfer
+                                </strong>
+
+                                <small>
+                                    Transfer payment after placing your order.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- CARD -->
+
+                        <label
+                            class="payment-option"
+                        >
+
+                            <input
+                                type="radio"
+                                name="payment_method"
+                                value="card"
+                            >
+
+                            <span
+                                class="payment-radio"
+                            >
+                            </span>
+
+
+                            <span
+                                class="payment-icon"
+                            >
+                                💳
+                            </span>
+
+
+                            <span
+                                class="payment-content"
+                            >
+
+                                <strong>
+                                    Card Payment
+                                </strong>
+
+                                <small>
+                                    Secure online card payment.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ORDER NOTE
+                ================================================== -->
+
+                <div class="checkout-card">
+
+                    <div class="checkout-card-header">
+
+                        <div>
+
+                            <span class="checkout-number">
+                                04
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    Order Note
+                                </h2>
+
+                                <p>
+                                    Anything you'd like us to know?
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="checkoutNote"
+                        >
+                            Note
+                            <span>
+                                (Optional)
+                            </span>
+                        </label>
+
+                        <textarea
+                            id="checkoutNote"
+                            name="note"
+                            rows="4"
+                            maxlength="500"
+                            placeholder="Add delivery instructions or other notes..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FORM ERROR -->
+
+                <div
+                    id="checkoutFormError"
+                    class="checkout-form-error"
+                    style="display:none;"
+                >
+                </div>
+
+
+                <!-- PLACE ORDER -->
+
+                <button
+                    type="button"
+                    id="placeOrderButton"
+                    class="btn btn-primary place-order-button"
+                >
+
+                    <span>
+                        Place Order
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+                <p class="checkout-security-note">
+
+                    🔒 Your order information is securely processed.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ORDER SUMMARY
+            ================================================== -->
+
+            <aside class="checkout-summary">
+
+
+                <div class="checkout-summary-card">
+
+                    <div class="checkout-summary-header">
+
+                        <h2>
+                            Your Order
+                        </h2>
+
+                        <a href="cart.html">
+                            Edit
+                        </a>
+
+                    </div>
+
+
+                    <!-- ITEMS -->
+
+                    <div
+                        id="checkoutItems"
+                        class="checkout-items"
+                    >
+
+                        <div class="checkout-loading">
+                            Loading...
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="summary-divider"></div>
+
+
+                    <!-- SUBTOTAL -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong
+                            id="checkoutSubtotal"
+                        >
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- DELIVERY -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong
+                            id="checkoutDelivery"
+                        >
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong
+                            id="checkoutTotal"
+                        >
+                            ₦0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TRUST -->
+
+                <div class="checkout-trust-card">
+
+                    <div>
+
+                        <span>
+                            🔐
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Secure Checkout
+                            </strong>
+
+                            <p>
+                                Your information is protected.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            🚚
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Reliable Delivery
+                            </strong>
+
+                            <p>
+                                Delivery across Nigeria.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Order Protection
+                            </strong>
+
+                            <p>
+                                Shop confidently with NaijaCart.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SUCCESS MODAL
+    ====================================================== -->
+
+    <div
+        id="orderSuccessModal"
+        class="modal-overlay"
+        style="display:none;"
+    >
+
+        <div class="success-modal">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="section-eyebrow">
+                ORDER CONFIRMED
+            </span>
+
+            <h2>
+                Thank you for your order!
+            </h2>
+
+            <p>
+                Your order has been placed successfully.
+            </p>
+
+            <p>
+                Order number:
+                <strong id="successOrderNumber">
+                    —
+                </strong>
+            </p>
+
+
+            <div class="success-actions">
+
+                <a
+                    href="orders.html"
+                    class="btn btn-primary"
+                >
+                    View My Orders
+                </a>
+
+                <a
+                    href="shop.html"
+                    class="btn btn-secondary"
+                >
+                    Continue Shopping
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="site-logo"
+                >
+                    Naija<span>Cart</span>
+                </a>
+
+                <p>
+                    Your trusted Nigerian online marketplace.
+                    Discover great products and shop with confidence.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Shop
+                </h3>
+
+                <a href="shop.html">
+                    All Products
+                </a>
+
+                <a href="shop.html?category=Electronics">
+                    Electronics
+                </a>
+
+                <a href="shop.html?category=Fashion">
+                    Fashion
+                </a>
+
+                <a href="shop.html?category=Beauty">
+                    Beauty
+                </a>
+
+                <a href="shop.html?category=Home">
+                    Home
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="orders.html">
+                    My Orders
+                </a>
+
+                <a href="cart.html">
+                    My Cart
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Help
+                </h3>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Delivery Information
+                </a>
+
+                <a href="#">
+                    Returns
+                </a>
+
+                <a href="#">
+                    FAQ
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 NaijaCart. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/validation.js"></script>
+
+    <script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>

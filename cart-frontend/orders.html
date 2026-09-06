@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Orders | CART</title>
+
+    <meta
+        name="description"
+        content="View, track and manage your CART orders."
+    >
+
+    <!-- MAIN SITE CSS -->
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+
+    <!-- ORDERS PAGE CSS -->
+    <link
+        rel="stylesheet"
+        href="css/orders.css"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+     PROMO BAR
+===================================================== -->
+
+<div class="promo-bar">
+    Free delivery on selected orders
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <!-- TOP LINKS -->
+
+    <div class="header-top">
+
+        <div class="container header-top-inner">
+
+            <div class="header-mini-links">
+
+                <a href="shipping.html">
+                    Shipping & Returns
+                </a>
+
+                <a href="support.html">
+                    Help Center
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN HEADER -->
+
+    <div class="header-main">
+
+        <div class="container header-main-inner">
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="brand"
+            >
+                <strong>CART</strong>
+                <span>SHOP SMART</span>
+            </a>
+
+
+            <!-- SEARCH -->
+
+            <form
+                class="header-search"
+                id="shopSearchForm"
+            >
+
+                <input
+                    type="search"
+                    id="shopSearchInput"
+                    placeholder="Search products..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Search"
+                >
+                    🔍
+                </button>
+
+            </form>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+
+                <!-- ACCOUNT -->
+
+                <a
+                    href="profile.html"
+                    class="header-action account-action"
+                >
+
+                    <span class="action-icon">
+                        👤
+                    </span>
+
+                    <span class="action-text">
+
+                        <small>
+                            Hello, sign in
+                        </small>
+
+                        <strong>
+                            Account
+                        </strong>
+
+                    </span>
+
+                </a>
+
+
+                <!-- WISHLIST -->
+
+                <a
+                    href="wishlist.html"
+                    class="header-action"
+                >
+
+                    <span class="action-icon">
+                        ♡
+                    </span>
+
+                    <span class="action-text">
+
+                        <small>
+                            Your
+                        </small>
+
+                        <strong>
+                            Wishlist
+                        </strong>
+
+                    </span>
+
+                    <span
+                        class="header-count wishlist-count"
+                        id="wishlistCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- CART -->
+
+                <a
+                    href="cart.html"
+                    class="header-action"
+                >
+
+                    <span class="action-icon">
+                        🛒
+                    </span>
+
+                    <span class="action-text">
+
+                        <small>
+                            Your
+                        </small>
+
+                        <strong>
+                            Cart
+                        </strong>
+
+                    </span>
+
+                    <span
+                        class="header-count cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================= -->
+
+    <nav class="main-nav">
+
+        <div class="container nav-inner">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="shop.html?category=Home">
+                Home
+            </a>
+
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+            <a
+                href="orders.html"
+                class="active"
+            >
+                Orders
+            </a>
+
+            <a href="shipping.html">
+                Shipping & Returns
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="container breadcrumb">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <span>
+        ›
+    </span>
+
+    <strong>
+        My Orders
+    </strong>
+
+</div>
+
+
+<!-- =====================================================
+     ORDERS HERO
+===================================================== -->
+
+<section class="orders-hero">
+
+    <div class="container orders-hero-inner">
+
+        <div class="orders-hero-content">
+
+            <span class="orders-eyebrow">
+                YOUR SHOPPING ACTIVITY
+            </span>
+
+            <h1>
+                My Orders
+            </h1>
+
+            <p>
+                Everything you have purchased from CART,
+                all in one place.
+            </p>
+
+        </div>
+
+
+        <div class="orders-hero-actions">
+
+            <a
+                href="shop.html"
+                class="orders-hero-button"
+            >
+                Continue Shopping
+                <span>→</span>
+            </a>
+
+            <a
+                href="profile.html"
+                class="orders-account-link"
+            >
+                Manage Account
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN ORDERS CONTENT
+===================================================== -->
+
+<main class="orders-page">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             ORDER OVERVIEW
+        ================================================= -->
+
+        <section class="orders-overview">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        ORDER OVERVIEW
+                    </span>
+
+                    <h2>
+                        Your shopping activity
+                    </h2>
+
+                </div>
+
+                <span class="updated-label">
+                    Updated automatically
+                </span>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="order-stats">
+
+
+                <!-- TOTAL ORDERS -->
+
+                <button
+                    type="button"
+                    class="order-stat-card"
+                    data-stat-filter="all"
+                >
+
+                    <div class="stat-icon">
+                        📦
+                    </div>
+
+                    <div class="stat-content">
+
+                        <strong id="totalOrders">
+                            0
+                        </strong>
+
+                        <span>
+                            Total Orders
+                        </span>
+
+                    </div>
+
+                    <span class="stat-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- PROCESSING -->
+
+                <button
+                    type="button"
+                    class="order-stat-card"
+                    data-stat-filter="processing"
+                >
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div class="stat-content">
+
+                        <strong id="processingOrders">
+                            0
+                        </strong>
+
+                        <span>
+                            Processing
+                        </span>
+
+                    </div>
+
+                    <span class="stat-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- SHIPPED -->
+
+                <button
+                    type="button"
+                    class="order-stat-card"
+                    data-stat-filter="shipped"
+                >
+
+                    <div class="stat-icon">
+                        🚚
+                    </div>
+
+                    <div class="stat-content">
+
+                        <strong id="shippedOrders">
+                            0
+                        </strong>
+
+                        <span>
+                            On The Way
+                        </span>
+
+                    </div>
+
+                    <span class="stat-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- DELIVERED -->
+
+                <button
+                    type="button"
+                    class="order-stat-card"
+                    data-stat-filter="delivered"
+                >
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div class="stat-content">
+
+                        <strong id="deliveredOrders">
+                            0
+                        </strong>
+
+                        <span>
+                            Delivered
+                        </span>
+
+                    </div>
+
+                    <span class="stat-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PURCHASE HISTORY
+        ================================================= -->
+
+        <section class="orders-history">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        PURCHASE HISTORY
+                    </span>
+
+                    <h2>
+                        Your Orders
+                    </h2>
+
+                    <p>
+                        View, track and manage your purchases.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SEARCH + SORT
+            ================================================= -->
+
+            <div class="orders-toolbar">
+
+
+                <!-- ORDER SEARCH -->
+
+                <div class="orders-search">
+
+                    <span class="orders-search-icon">
+                        🔍
+                    </span>
+
+                    <input
+                        type="search"
+                        id="orderSearch"
+                        placeholder="Search by order number or product..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        class="orders-search-clear"
+                        data-clear-orders
+                        aria-label="Clear search"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- SORT -->
+
+                <div class="orders-sort">
+
+                    <label for="ordersSort">
+                        Sort by
+                    </label>
+
+                    <select id="ordersSort">
+
+                        <option value="newest">
+                            Newest
+                        </option>
+
+                        <option value="oldest">
+                            Oldest
+                        </option>
+
+                        <option value="highest">
+                            Highest Amount
+                        </option>
+
+                        <option value="lowest">
+                            Lowest Amount
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTER TABS
+            ================================================= -->
+
+            <div class="order-filter-tabs">
+
+                <button
+                    type="button"
+                    class="order-filter active"
+                    data-order-filter="all"
+                >
+                    All Orders
+
+                    <span class="order-tab-count">
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="order-filter"
+                    data-order-filter="processing"
+                >
+                    Processing
+
+                    <span class="order-tab-count">
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="order-filter"
+                    data-order-filter="shipped"
+                >
+                    Shipped
+
+                    <span class="order-tab-count">
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="order-filter"
+                    data-order-filter="delivered"
+                >
+                    Delivered
+
+                    <span class="order-tab-count">
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="order-filter"
+                    data-order-filter="cancelled"
+                >
+                    Cancelled
+
+                    <span class="order-tab-count">
+                        0
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESULTS BAR
+            ================================================= -->
+
+            <div class="orders-results-bar">
+
+                <div class="results-title">
+
+                    <strong>
+                        Your orders
+                    </strong>
+
+                    <span id="ordersResultsCount">
+                        0 orders found
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ORDERS LIST
+            ================================================= -->
+
+            <div
+                id="ordersList"
+                class="orders-list"
+            >
+            </div>
+
+
+            <!-- =================================================
+                 EMPTY ORDERS
+            ================================================= -->
+
+            <div
+                id="ordersEmpty"
+                class="orders-empty"
+                style="display:none;"
+            >
+
+                <div class="empty-illustration">
+
+                    <div class="empty-bag">
+                        🛍️
+                    </div>
+
+                </div>
+
+                <span class="empty-label">
+                    NO ORDERS YET
+                </span>
+
+                <h3>
+                    You haven't placed any orders yet
+                </h3>
+
+                <p>
+                    Your completed purchases will appear
+                    here with delivery updates, payment
+                    information and order details.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="empty-button"
+                >
+                    Start Shopping
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 NO SEARCH RESULTS
+            ================================================= -->
+
+            <div
+                id="ordersNoMatch"
+                class="orders-no-match"
+                style="display:none;"
+            >
+
+                <div class="no-match-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    No matching orders
+                </h3>
+
+                <p>
+                    We couldn't find an order matching
+                    your search or selected filter.
+                </p>
+
+                <button
+                    type="button"
+                    data-clear-orders
+                >
+                    Clear Filters
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SHOP AGAIN
+        ================================================= -->
+
+        <section class="shop-again-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        JUST FOR YOU
+                    </span>
+
+                    <h2>
+                        Shop Again
+                    </h2>
+
+                    <p>
+                        Discover more products from CART.
+                    </p>
+
+                </div>
+
+                <a
+                    href="shop.html"
+                    class="section-link"
+                >
+                    View All Products
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <div
+                id="ordersProductGrid"
+                class="orders-product-grid"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ORDER HELP
+        ================================================= -->
+
+        <section class="orders-help">
+
+            <div class="help-content">
+
+                <span class="section-eyebrow">
+                    NEED HELP?
+                </span>
+
+                <h2>
+                    Something wrong with your order?
+                </h2>
+
+                <p>
+                    Whether it's a delivery issue, payment
+                    question, return, refund or missing item,
+                    we're here to help.
+                </p>
+
+                <div class="help-buttons">
+
+                    <a
+                        href="shipping.html"
+                        class="help-button primary"
+                    >
+                        Shipping & Returns
+                    </a>
+
+                    <a
+                        href="support.html"
+                        class="help-button secondary"
+                    >
+                        Contact Support
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="help-icon">
+                ?
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="newsletter">
+
+    <div class="container newsletter-inner">
+
+        <div class="newsletter-text">
+
+            <span>
+                STAY IN THE LOOP
+            </span>
+
+            <h2>
+                Get offers & updates.
+            </h2>
+
+            <p>
+                Subscribe for new products, deals and
+                exclusive CART updates.
+            </p>
+
+        </div>
+
+
+        <form
+            id="newsletterForm"
+            class="newsletter-form"
+        >
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="brand footer-logo"
+            >
+
+                <strong>
+                    CART
+                </strong>
+
+                <span>
+                    SHOP SMART
+                </span>
+
+            </a>
+
+            <p>
+                Your trusted online shopping destination
+                for quality products at great prices.
+            </p>
+
+        </div>
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="shop.html">
+                All Products
+            </a>
+
+            <a href="shop.html?category=Electronics">
+                Electronics
+            </a>
+
+            <a href="shop.html?category=Fashion">
+                Fashion
+            </a>
+
+            <a href="shop.html?category=Home">
+                Home
+            </a>
+
+            <a href="shop.html?category=Beauty">
+                Beauty
+            </a>
+
+        </div>
+
+
+        <!-- CUSTOMER CARE -->
+
+        <div class="footer-column">
+
+            <h3>
+                Customer Care
+            </h3>
+
+            <a href="orders.html">
+                My Orders
+            </a>
+
+            <a href="shipping.html">
+                Shipping & Returns
+            </a>
+
+            <a href="support.html">
+                Help Center
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+
+        <!-- ACCOUNT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Account
+            </h3>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="register.html">
+                Create Account
+            </a>
+
+            <a href="profile.html">
+                My Profile
+            </a>
+
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            © 2026 CART. All rights reserved.
+            Shop smart. Live better.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="ordersToast"
+    class="orders-toast"
+></div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/orders.js"></script>
+
+</body>
+</html>

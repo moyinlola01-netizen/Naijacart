@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment | CART</title>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                🛒 <span>CART</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shop.html#categories">Categories</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="search-toggle"
+                    id="searchToggle"
+                    aria-label="Search"
+                >
+                    🔍
+                </button>
+
+                <a
+                    href="cart.html"
+                    class="cart-link"
+                    aria-label="Shopping cart"
+                >
+                    🛒
+                    <span id="cartCount">0</span>
+                </a>
+
+                <a
+                    href="account.html"
+                    class="account-link"
+                    aria-label="My account"
+                >
+                    👤
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH PANEL -->
+
+        <div
+            class="search-panel"
+            id="searchPanel"
+        >
+
+            <form id="searchForm">
+
+                <input
+                    type="search"
+                    id="paymentSearch"
+                    placeholder="Search products..."
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PAYMENT PAGE
+    ========================== -->
+
+    <main class="payment-page">
+
+        <div class="payment-container">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="payment-heading">
+
+                <p class="page-label">
+                    CHECKOUT
+                </p>
+
+                <h1>
+                    Payment
+                </h1>
+
+                <p>
+                    Choose your preferred payment method
+                    and complete your order securely.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 CHECKOUT PROGRESS
+            ========================== -->
+
+            <div class="checkout-progress">
+
+                <div class="progress-step completed">
+                    <span>1</span>
+                    <p>Cart</p>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step completed">
+                    <span>2</span>
+                    <p>Shipping</p>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step active">
+                    <span>3</span>
+                    <p>Payment</p>
+                </div>
+
+                <div class="progress-line"></div>
+
+                <div class="progress-step">
+                    <span>4</span>
+                    <p>Complete</p>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PAYMENT LAYOUT
+            ========================== -->
+
+            <div class="payment-layout">
+
+
+                <!-- =========================
+                     PAYMENT METHODS
+                ========================== -->
+
+                <section class="payment-method-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <p class="section-label">
+                                PAYMENT METHOD
+                            </p>
+
+                            <h2>
+                                How would you like to pay?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="paymentForm">
+
+
+                        <!-- PAYSTACK -->
+
+                        <label
+                            class="payment-option"
+                            for="paystackPayment"
+                        >
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                id="paystackPayment"
+                                value="paystack"
+                                checked
+                            >
+
+                            <div class="payment-option-content">
+
+                                <div class="payment-icon">
+                                    💳
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Pay Online
+                                    </strong>
+
+                                    <p>
+                                        Pay securely with your
+                                        card, bank transfer or
+                                        other supported methods.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- CASH ON DELIVERY -->
+
+                        <label
+                            class="payment-option"
+                            for="cashPayment"
+                        >
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                id="cashPayment"
+                                value="cash_on_delivery"
+                            >
+
+                            <div class="payment-option-content">
+
+                                <div class="payment-icon">
+                                    💵
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Cash on Delivery
+                                    </strong>
+
+                                    <p>
+                                        Pay when your order
+                                        arrives at your delivery
+                                        address.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- BANK TRANSFER -->
+
+                        <label
+                            class="payment-option"
+                            for="bankTransfer"
+                        >
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                id="bankTransfer"
+                                value="bank_transfer"
+                            >
+
+                            <div class="payment-option-content">
+
+                                <div class="payment-icon">
+                                    🏦
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Bank Transfer
+                                    </strong>
+
+                                    <p>
+                                        Transfer the order amount
+                                        directly to the provided
+                                        account.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- PAYMENT DETAILS -->
+
+                        <div
+                            class="payment-details"
+                            id="paymentDetails"
+                        >
+
+                            <!-- ONLINE PAYMENT -->
+
+                            <div
+                                class="payment-method-details active"
+                                id="paystackDetails"
+                            >
+
+                                <div class="secure-payment">
+
+                                    <span>
+                                        🔒
+                                    </span>
+
+                                    <div>
+
+                                        <strong>
+                                            Secure Payment
+                                        </strong>
+
+                                        <p>
+                                            Your payment information
+                                            is processed securely.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- CASH ON DELIVERY -->
+
+                            <div
+                                class="payment-method-details"
+                                id="cashDetails"
+                            >
+
+                                <div class="payment-notice">
+
+                                    <span>
+                                        ℹ️
+                                    </span>
+
+                                    <p>
+                                        You will pay the total amount
+                                        when your order is delivered.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- BANK TRANSFER -->
+
+                            <div
+                                class="payment-method-details"
+                                id="bankDetails"
+                            >
+
+                                <div class="bank-transfer-info">
+
+                                    <h3>
+                                        Bank Transfer Details
+                                    </h3>
+
+                                    <div class="bank-detail-row">
+
+                                        <span>
+                                            Bank
+                                        </span>
+
+                                        <strong id="bankName">
+                                            CART Bank
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="bank-detail-row">
+
+                                        <span>
+                                            Account Name
+                                        </span>
+
+                                        <strong id="accountName">
+                                            CART Store
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="bank-detail-row">
+
+                                        <span>
+                                            Account Number
+                                        </span>
+
+                                        <strong id="accountNumber">
+                                            0000000000
+                                        </strong>
+
+                                    </div>
+
+                                    <p class="bank-warning">
+                                        Bank transfer instructions
+                                        will be provided when your
+                                        order is created.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PAYMENT AGREEMENT -->
+
+                        <label class="payment-agreement">
+
+                            <input
+                                type="checkbox"
+                                id="paymentAgreement"
+                                required
+                            >
+
+                            <span>
+                                I confirm that my order and
+                                payment information are correct.
+                            </span>
+
+                        </label>
+
+
+                        <!-- BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="payment-submit-btn"
+                            id="paymentSubmitBtn"
+                        >
+                            Continue to Order
+                        </button>
+
+
+                        <!-- FORM MESSAGE -->
+
+                        <div
+                            class="payment-message"
+                            id="paymentMessage"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- =========================
+                     ORDER SUMMARY
+                ========================== -->
+
+                <aside class="payment-summary">
+
+                    <div class="summary-card">
+
+                        <div class="summary-header">
+
+                            <h2>
+                                Order Summary
+                            </h2>
+
+                        </div>
+
+
+                        <!-- PRODUCTS -->
+
+                        <div
+                            class="payment-items"
+                            id="paymentItems"
+                        >
+
+                            <div class="summary-loading">
+                                Loading your cart...
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRICE DETAILS -->
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="paymentSubtotal">
+                                ₦0
+                            </strong>
+
+                        </div>
+
+                        <div class="summary-row">
+
+                            <span>
+                                Shipping
+                            </span>
+
+                            <strong id="paymentShipping">
+                                ₦0
+                            </strong>
+
+                        </div>
+
+                        <div class="summary-row">
+
+                            <span>
+                                Discount
+                            </span>
+
+                            <strong id="paymentDiscount">
+                                ₦0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-divider"></div>
+
+
+                        <div class="summary-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="paymentTotal">
+                                ₦0
+                            </strong>
+
+                        </div>
+
+
+                        <!-- SHIPPING ADDRESS -->
+
+                        <div class="summary-address">
+
+                            <div class="summary-address-heading">
+
+                                <span>
+                                    📍
+                                </span>
+
+                                <strong>
+                                    Delivery Address
+                                </strong>
+
+                            </div>
+
+                            <p id="paymentAddress">
+                                Your delivery address will
+                                appear here.
+                            </p>
+
+                            <a href="shipping.html">
+                                Change Address
+                            </a>
+
+                        </div>
+
+
+                        <!-- BACK TO CART -->
+
+                        <a
+                            href="cart.html"
+                            class="back-to-cart"
+                        >
+                            ← Back to Cart
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         PAYMENT PROCESSING MODAL
+    ========================== -->
+
+    <div
+        class="payment-modal"
+        id="paymentModal"
+        aria-hidden="true"
+    >
+
+        <div class="payment-modal-overlay"></div>
+
+        <div class="payment-modal-content">
+
+            <div class="payment-loading-icon">
+                ⏳
+            </div>
+
+            <h2>
+                Processing Payment
+            </h2>
+
+            <p>
+                Please wait while we process your payment.
+                Do not close this page.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    🛒 CART
+                </a>
+
+                <p>
+                    Shop smarter. Shop better.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 CART. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/payment.js"></script>
+
+</body>
+</html>
